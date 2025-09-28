@@ -1,0 +1,400 @@
+// Translation dictionary (English + German). Replace text as needed.
+const T = {
+    en: {
+        /* Personal Details English */
+        name: 'Sai Adarsh Varma Chittari',
+        headline: 'Embedded Software Engineer | Function Responsible Complex Device Drivers Airbags | C/C++',
+        about_title: 'About',
+        about_text: `Hi, I am Adarsh — a builder, a problem-solver, and an engineer who loves connecting 
+        innovation with real-world impact. I am a Masters Student At Technishe Universitat Hamburg Harburg. 
+        I have reviously worked as a Software developer and a Function Responsible at BOSCH for Airbags. 
+        I love working in the field of AI, ML and IoT and am always in the loop to learn, research and contribute more.`,
+
+        /* Navigation Bar */
+        nav_about_text: 'About',
+        nav_projects_text: 'Projects',
+        nav_experience_text: 'Experience',
+        nav_Patent_Research_text: 'Patent & Research',
+        nav_courses_text: 'Courses',
+        nav_extracirrcular_text: 'ExtraCurricular/Awards',
+        nav_skills_text: 'Skills',
+        nav_contact_text: 'Contact',
+        nav_resume_text: 'Download Resume',
+
+        /* Projects Title English*/
+        projects_title: 'Projects',
+
+        /* Project 1 Information English*/
+        proj1_title: 'Development Of Uncrewed Vehicle uisng deep Learning and IoT',
+        proj1_desc: `Developed a Software-Defined Vehicle(SDV) prototype featuring three driving modes: Manual, Semi-Automatic
+        (Adaptive Cruise Control) and Autonomous (Lane Detection) integrated with safety features like accident
+        detection. The mobile application enables communication with the vehicle and seamless drive mode transitions`,
+        proj1_link: 'View code',
+
+        /* Project 2 Information English*/
+        proj2_title: 'Jack-The Personal Assistant',
+        proj2_desc: `Developed a personal assistant in Python using libraries like NLTK, Speech Recognition, and APIs for tasks such as weather
+        reporting,WhatsApp messaging, email management, and COVID case updates.`,
+        proj2_link: 'View code',
+
+        /* Project 3 Information English*/
+        // proj3_title: 'Industrial Motor Controller',
+        // proj3_desc: 'PID + FOC-based controller with watchdogs, fail-safe states and CAN remote commands.',
+        // proj3_link: 'View code',
+
+        /* Experience Title English*/
+        experience_title: 'Experience',
+
+        /* Experience 1 Description English */
+        experience1_desc: `
+        <ul>
+          <li>Developed airbag software for Mercedes-Benz, handling COM stack (FlexRay, CAN, LIN) and Complex Device Drivers (CDD) across platforms (MMA, MRA2M, S-Class, E-Class).</li>
+          <li>Managed requirements in DOORS, ensuring compliance with ASIL, ISO 26262, and system standards.</li>
+          <li>Designed UML-based software architecture and detailed design models, conducted unit testing, HiL/SiL testing, and peer artifact reviews.</li>
+          <li>Resolved customer defects through root cause analysis, bug fixing, and validation.</li>
+          <li>Implemented new signals for FlexRay, LIN, and CAN in the COM stack, including routing, mapping, module configuration (EcuM, BswM, PduR, ComM, etc.), and RTE generation.</li>
+          <li>Handled change requests for modules like Battery Disconnect Management (BDM), Sleep Mode Management, E-Call (SOS Warning System), Warning Lamp Management, Crash Output, and Switch & Squib Management.</li>
+          <li>Redesigned the Diagnostics Crash Output component, improving fault management and communication between Diagnostics, CDD, and COM — enhancing scalability and robustness in Mercedes-Benz Van projects.</li>
+          <li>Spearheaded deployment of SiL (Software-in-the-Loop) testing frameworks across global locations, collaborating with the SiL team in Vietnam to streamline integration and testing workflows for Mercedes-Benz projects.</li>
+        </ul>
+        `,
+
+        /* Experience 2 Description English*/
+        experience2_desc: `
+        <ul>
+            <li>Designed and developed a GUI-based Remote Target Access Solution for GRA (Graphics Domain), enabling
+            remote interaction with BOSCH graphics team ECUs from General Motors and Integrated key
+            functionalities like
+            hardware control, software executions, ECU flashing,switch configuration and switch hardware control,
+            thereby improving efficiency by 80%.</li>
+            <li>Implemented real-time camera streaming feature for remote lab monitoring, enhancing visibility and
+            debugging capabilities. Developed the solution with collaboration and support from the tech architect, gaining
+            experience on full software development cycle from architecture design to deployment further on
+            pitching at ADIT GmbH workshop, ensuring scalability and robustness for future enhancements.</li>
+        </ul>
+        `,
+
+        /* Patent and Research Title English */
+        Patent_Research_title:'Patent & Research',
+        
+        /* Patent and Research Description English*/
+        patent_research_description:`
+        <ul>
+          <li> IJARIIT 2020: ”Pothole Detection For Accident Prevention : A Review </li>
+          <li>ICSTCEE 2023: ”Development Of An Uncrewed Vehicle Prototype Using Deep Learning And IOT</li>
+          <li>KSCST Funding:”Development Of An Uncrewed Vehicle Prototype Using Deep Learning And IOT” Please
+          refer proposal No: 46S BE 2688</li>
+          <li>Intellectual Property Of India: Development Of Self-Driving Car Prototype (Application No:202241029012·Issued Jun 10) </li>
+        </ul>
+        `,
+
+        /* Courses Title English */
+        Courses_title:'Courses',
+
+        /* Courses Description English */
+        courses_description:`
+        <ul>
+          <li> Course 1 in EN </li>
+          <li> Course 2 in EN </li>
+        </ul>
+        `,
+
+        /* ExtraCurricular/Awards Title English */
+        ExtraCirrucular_title: 'ExtraCurricular/Awards',
+       
+        /* ExtraCurricular/Awards Description English */
+        extracirrucular1_description: `Mentored and guided developers through workshops, collaborative projects, and
+        coding events, fostering skill growth and engagement. Supported junior members in improving technical proficiency.`,
+
+        /* ExtraCurricular/Awards Description English */
+        extracirrucular2_description: `🎉 As the Head of Fun at Work in my team, I took the initiative to organize
+        engaging activities and events that fostered collaboration and strengthened team bonding. 🤝 From fun games and creative
+        challenges 🎲 to team-building sessions and informal gatherings, I focused on creating a positive, energetic work culture 🌟 that encouraged participation, boosted morale,
+        and brought people closer together.`,
+
+        /* Skills Title English */  
+        skills_title: 'Skills',      
+
+        /* Education Title English */  
+        education_title: 'Education',
+
+        /* Download Resume Title English */  
+        resume_title: 'Resume',
+
+        /* Download Resume Description English */ 
+        resume_description: 'Download a printable copy of my resume (PDF).',
+
+        /* Download Resume Button Description English */ 
+        resume_btn: 'Download Resume',
+
+        /* Personal Interest Title English */ 
+        personal_interests_title:'🌟 Personal Interests',
+
+        /* Personal Interest Description English */ 
+        personal_description_1:'🥾 Hiking & trekking adventures in the great outdoors',
+        personal_description_2:'🌍 Traveled across half of India, exploring its diversity',
+        personal_description_3:'🤝 Passionate about connecting with new cultures & people',
+        personal_description_4:'🍳 Love cooking and experimenting with global cuisines',
+        personal_description_5:'🗣️ Multilingual — fluent in 5 languages, currently pursuing my 6th language German A2',
+        
+        /* Contact Title English */ 
+        contact_title: 'Contact'
+    },
+
+    de: {
+        /* Personal Details Deutsch */
+        name: 'Sai Adarsh Varma Chittari',
+        headline: 'Embedded-Software-Ingenieur | Funktion Verantwortlich Komplexe Gerätetreiber Airbags | C/C++',
+        about_title: 'Über mich',
+        about_text: `
+        Hallo, ich bin Adarsh – ein Konstrukteur, ein Problemlöser und ein Ingenieur, 
+        der es liebt, Innovationen mit der realen Welt zu verbinden. 
+        Ich bin Masterstudent an der Technischen Universität Hamburg Harburg. 
+        Zuvor habe ich als Softwareentwickler und Funktionsverantwortlicher bei BOSCH 
+        für Airbags gearbeitet. 
+        Ich liebe es, in den Bereichen AI, ML und IoT zu arbeiten und bin immer 
+        auf dem Laufenden, um zu lernen, zu forschen und mehr beizutragen.
+      `,
+
+        /* Navigation Bar Deutsch */
+        nav_about_text: 'Über mich',
+        nav_projects_text: 'Projekte',
+        nav_experience_text: 'Berufserfahrung',
+        nav_Patent_Research_text: 'Patente & Forschung',
+        nav_courses_text: 'Kurse',
+        nav_extracirrcular_text: 'Außerschulische Aktivitäten & Auszeichnungen',
+        nav_skills_text: 'Kompetenzen',
+        nav_contact_text: 'Kontakt',
+        nav_resume_text: 'Lebenslauf herunterladen',
+
+        /* Projects Title Deutsch */
+        projects_title: 'Projekte',
+
+        /* Project 1 Information Deutsch*/
+        proj1_title: 'Development Of Uncrewed Vehicle uisng deep Learning and IoT',
+        proj1_desc: `Developed a Software-Defined Vehicle(SDV) prototype featuring three driving modes: Manual, Semi-Automatic
+        (Adaptive Cruise Control) and Autonomous (Lane Detection) integrated with safety features like accident
+        detection. The mobile application enables communication with the vehicle and seamless drive mode transitions`,
+        proj1_link: 'View code',
+
+        /* Project 2 Information Deutsch*/
+        proj2_title: 'Jack-The Personal Assistant',
+        proj2_desc: `Developed a personal assistant in Python using libraries like NLTK, Speech Recognition, and APIs for tasks such as weather
+        reporting,WhatsApp messaging, email management, and COVID case updates.`,
+        proj2_link: 'View code',
+
+        /* Project 3 Information Deutsch*/
+        // proj3_title: 'Industrieller Motorregler',
+        // proj3_desc: 'PID + FOC-basierter Regler mit Watchdogs, Fail-Safe-Zuständen und CAN-Fernsteuerbefehlen.',
+        // proj3_link: 'Code ansehen',
+
+        /* Experience Title Deutsch*/
+        experience_title: 'Erfahrung',
+        
+        /* Experience 1 Description Deutsch */
+        experience1_desc: `
+        <ul>
+        <li>Entwicklung von Airbag-Software für Mercedes-Benz, Betreuung des COM-Stacks (FlexRay, CAN, LIN) und der Complex Device Drivers (CDD) über verschiedene Plattformen (MMA, MRA2M, S-Klasse, E-Klasse).</li>
+        <li>Verwaltung von Anforderungen in DOORS unter Einhaltung von ASIL, ISO 26262 und Systemstandards.</li>
+        <li>Erstellung von UML-basierter Softwarearchitektur und detaillierten Designmodellen, Durchführung von Unit-Tests, HiL-/SiL-Tests und Peer-Reviews von Artefakten.</li>
+        <li>Behebung von Kundenfehlern durch Root-Cause-Analyse, Bug-Fixing und Validierung.</li>
+        <li>Implementierung neuer Signale für FlexRay, LIN und CAN im COM-Stack, einschließlich Routing, Mapping, Modulspezifikation (EcuM, BswM, PduR, ComM usw.) und RTE-Generierung.</li>
+        <li>Bearbeitung von Change Requests für Module wie Battery Disconnect Management (BDM), Sleep Mode Management, E-Call (SOS-Warnsystem), Warnlampen-Management, Crash-Output sowie Switch- & Squib-Management.</li>
+        <li>Neugestaltung der Komponente „Diagnostics Crash Output“ zur Verbesserung des Fehlermanagements und der Kommunikation zwischen Diagnostics, CDD und COM — Steigerung von Skalierbarkeit und Robustheit in Mercedes-Benz Van-Projekten.</li>
+        <li>Leitung der Einführung von SiL- (Software-in-the-Loop) Testframeworks an globalen Standorten, enge Zusammenarbeit mit dem SiL-Team in Vietnam zur Optimierung von Integrations- und Test-Workflows für Mercedes-Benz-Projekte.</li>
+        </ul>
+        `,
+
+        /* Experience 2 Description Deutsch*/
+        experience2_desc: `
+        <ul>
+        <li>Konzeption und Entwicklung einer GUI-basierten Remote-Target-Access-Lösung für GRA (Graphics Domain), die eine Remote-Interaktion mit ECUs des BOSCH-Grafikteams für General Motors ermöglicht. Integration zentraler Funktionen wie Hardwaresteuerung, Softwareausführung, ECU-Flashing, Schaltkonfiguration und Schalthardware-Steuerung — Steigerung der Effizienz um 80%.</li>
+        <li>Implementierung einer Echtzeit-Kamerastreaming-Funktion für die Fernüberwachung des Labors, Verbesserung der Transparenz und Debugging-Fähigkeiten. Entwicklung der Lösung in Zusammenarbeit mit dem Tech-Architekten, umfassende Erfahrung im gesamten Softwareentwicklungszyklus von Architekturdesign bis Deployment. Präsentation der Lösung im ADIT GmbH Workshop, Sicherstellung von Skalierbarkeit und Robustheit für zukünftige Erweiterungen.</li>
+        </ul>
+        `,
+
+        /* Patent and Research Title Deutsch */
+        Patent_Research_title:'Patente & Forschung',
+        
+        /* Patent and Research Description Deutsch*/
+        patent_research_description:`
+        <ul>
+          <li> IJARIIT 2020: ”Pothole Detection For Accident Prevention : A Review </li>
+          <li>ICSTCEE 2023: ”Development Of An Uncrewed Vehicle Prototype Using Deep Learning And IOT</li>
+          <li>KSCST Funding:”Development Of An Uncrewed Vehicle Prototype Using Deep Learning And IOT” Please
+          refer proposal No: 46S BE 2688</li>
+          <li>Intellectual Property Of India: Development Of Self-Driving Car Prototype (Application No:202241029012·Issued Jun 10) </li>
+        </ul>
+        `,
+
+        /* Courses Title Deutsch */
+        Courses_title:'Kurse',
+
+        /* Courses Description Deutsch */
+        courses_description:`
+        <ul>
+          <li> Course 1 in DE </li>
+          <li> Course 2 in DE </li>
+        </ul>
+        `,
+
+        /* ExtraCurricular/Awards Title Deutsch */
+        ExtraCirrucular_title: 'Außerschulische Aktivitäten & Auszeichnungen',
+       
+        /* ExtraCurricular/Awards Description Deutsch */
+        extracirrucular1_description: `Durch Workshops, Gemeinschaftsprojekte und Coding-Events Entwickler betreut und angeleitet, 
+        um Kompetenzentwicklung und Engagement zu fördern. Unterstützung von Junior-Mitgliedern beim Ausbau ihrer technischen Fähigkeiten.`,
+
+        /* ExtraCurricular/Awards Description Deutsch */
+        extracirrucular2_description: `🎉 Als ,Head of Fun at Work“ in meinem Team habe ich die Initiative ergriffen, 
+        spannende Aktivitäten und Events zu organisieren, die Zusammenarbeit gefördert und den Teamzusammenhalt gestärkt. 
+        🤝 Von Spielen und kreativen Challenges 🎲 bis hin zu Teambuilding-Sessions und informellen Treffen lag mein Fokus 
+        darauf, eine positive, energiegeladene Arbeitskultur 🌟 zu schaffen, die Motivation steigerte, Beteiligung förderte 
+        und Menschen enger zusammenbrachte.`,
+
+        /* Skills Title Deutsch */
+        skills_title: 'Fähigkeiten',
+
+        /* Education Title Deutsch */  
+        education_title: 'Bildung',
+        
+        /* Download Resume Title Deutsch */  
+        resume_title: 'Lebenslauf',
+       
+        /* Download Resume Description Deutsch */ 
+        resume_description: 'Laden Sie eine druckbare Kopie meines Lebenslaufs (PDF) herunter.',
+        
+        /* Download Resume Button Description Deutsch */ 
+        resume_btn: 'Lebenslauf herunterladen',
+
+        /* Personal Interest Title Deutsch */ 
+        personal_interests_title:'🌟 Persönliche Interessen',
+
+        /* Personal Interest Description Deutsch */ 
+        personal_description_1:'🥾 Wandern & Trekking-Abenteuer in der Natur',
+        personal_description_2:'🌍 Reisen durch die Hälfte Indiens und Entdecken seiner Vielfalt',
+        personal_description_3:'🤝 Leidenschaft für den Austausch mit neuen Kulturen & Menschen',
+        personal_description_4:'🍳 Liebe zum Kochen und Experimentieren mit internationalen Küchen',
+        personal_description_5:'🗣️ Mehrsprachig — fließend in 5 Sprachen, derzeit Deutsch A2 als sechste Sprache',
+        
+        /* Contact Title Deutsch */ 
+        contact_title: 'Kontakt'
+
+    }
+};
+
+/* To disable German Feature Comment Below Section */
+/* German Language Feature Starts Here */
+// Apply translations to the page
+function applyLang(lang) {
+    document.querySelectorAll('[data-key]').forEach(el => {
+        const k = el.getAttribute('data-key');
+        if (T[lang] && T[lang][k]) {
+            // small heuristic: if element is an anchor and translation contains url-like text, leave href.
+            //el.textContent = T[lang][k]; To enable as text
+            el.innerHTML = T[lang][k]; // use if you have HTML elements inside
+        }
+    });
+    
+}
+
+// Initial language
+let current = 'en';
+applyLang(current);
+
+// Toggle handler
+const chk = document.getElementById('langCheck');
+chk.addEventListener('change', (e) => {
+    current = e.target.checked ? 'de' : 'en';
+    applyLang(current);
+    // persist in localStorage
+    try { localStorage.setItem('siteLang', current); } catch (e) { }
+});
+
+// Load persisted language
+try {
+    const saved = localStorage.getItem('siteLang');
+    if (saved) {
+        chk.checked = (saved === 'de');
+        current = saved;
+        applyLang(current);
+    }
+} catch (e) { }
+/* To disable German Feature Comment Above Section */
+/* German Language Feature Ends Here */
+
+
+// Small accessibility: toggle via keyboard (space on label)
+document.querySelector('.toggle').addEventListener('keydown', (ev) => {
+    if (ev.key === ' ' || ev.key === 'Enter') { ev.preventDefault(); chk.checked = !chk.checked; chk.dispatchEvent(new Event('change')); }
+});
+
+// Example: wire up view code links to sample GitHub (placeholder)
+document.querySelectorAll('[data-key$="_link"]').forEach(a => {
+    a.href = 'https://github.com/yourusername';
+    a.target = '_blank';
+});
+
+
+
+
+//Navigation Fix
+/*
+    const navButtons = document.querySelectorAll('.navbar button');
+
+navButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Remove active class from all buttons
+    navButtons.forEach(btn => btn.classList.remove('active'));
+
+    // Add active class to the clicked button
+    button.classList.add('active');
+
+    // Get target section ID from data-target attribute
+    const targetId = button.getAttribute('data-target');
+    const targetSection = document.getElementById(targetId);
+
+    // Scroll smoothly to that section if it exists
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+*/
+
+const navButtons = document.querySelectorAll('.navbar button');
+navButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+/* Detailed Skills Section */ 
+const filterBtns = document.querySelectorAll(".filter-btn");
+const skillBars = document.querySelectorAll(".skill-bar");
+
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    // update active button
+    document.querySelector(".filter-btn.active").classList.remove("active");
+    btn.classList.add("active");
+
+    // get filter
+    let filter = btn.getAttribute("data-filter");
+
+    // show/hide instantly
+    skillBars.forEach(bar => {
+      if (filter === "all" || bar.classList.contains(filter)) {
+        bar.style.display = "block";
+      } else {
+        bar.style.display = "none";
+      }
+    });
+  });
+});
+
+

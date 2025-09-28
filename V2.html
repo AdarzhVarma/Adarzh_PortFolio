@@ -1,0 +1,585 @@
+<!--
+Embedded Software Engineer Portfolio (Single-file HTML)
+Ready to host on GitHub Pages: place this file as index.html in repo "yourusername.github.io"
+
+How to customize quickly:
+ - Replace NAME, HEADLINE, and placeholder text inside the translations object.
+ - Replace project images by swapping the <svg> placeholders or add files and update src.
+ - Add your resume file as resume.pdf in the same repo (or update link below).
+ - Commit & push to GitHub, go to Settings → Pages and enable site from main branch / root.
+
+This file contains:
+ - A language slider (EN / DE) toggling all visible text without reload.
+ - Embedded-friendly sections: About, Skills, Projects, Experience, Education, Resume.
+ - Responsive layout, no external dependencies.
+-->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> C Sai Adarsh Varma — Embedded Software Engineer</title>
+  <meta name="description" content="Embedded Software Engineer portfolio — C/C++, RTOS, STM32, CAN. Ready-to-host GitHub Pages." />
+  <!-- CSS External File Linking -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- Top Bar Holding Name, Navigation Bar and Slider For Language Start -->
+    <div class="topbar">
+      <header>
+        <!-- Name and Designation -->
+        <div class="brand">
+          <div class="avatar">CV</div>
+          <div>
+            <h1 data-key="name">Sai Adarsh Varma Chittari</h1>
+            <p class="lead" data-key="headline">Embedded Software Engineer | Function Responsible Complex Device Drivers
+              Airbags | C/C++ </p>
+          </div>
+        </div>
+
+        <!-- Note: Incase Language Feature is Not Needed Comment Below Section and Check Java Script File -->
+        <!-- Language Slider -->
+        <div class="lang-toggle">
+          <div class="labels"><span>🇬🇧 EN</span></div>
+          <label class="toggle" title="English / Deutsch">
+            <input id="langCheck" type="checkbox" aria-label="Switch language">
+            <div class="knob"></div>
+          </label>
+          <div class="labels"><span>DE 🇩🇪</span></div>
+        </div>
+        <!-- Note: Incase Language Feature is Not Needed Comment Above Section and Check Java Script File -->
+      </header>
+
+      <!-- Navigation bar -->
+      <nav class="navbar" aria-label="Page sections navigation">
+        <button type="button" data-target="about" data-key="nav_about_text">About</button>
+        <button type="button" data-target="projects" data-key="nav_projects_text">Projects</button>
+        <button type="button" data-target="experience" data-key="nav_experience_text">Experience</button>
+        <button type="button" data-target="Patent & Research" data-key="nav_Patent_Research_text">Patent &
+          Research</button>
+        <button type="button" data-target="Courses" data-key="nav_courses_text">Courses</button>
+        <button type="button" data-target="ExtraCirrucular"
+          data-key="nav_extracirrcular_text">ExtraCirrucular/Awards</button>
+        <button type="button" data-target="Skills" data-key="nav_skills_text">Skills</button>
+        <button type="button" data-target="Contact" data-key="nav_contact_text">Contact</button>
+        <button type="button" data-target="Resume" data-key="nav_resume_text">Download Resume</button>
+      </nav>
+    </div>
+    <!-- Top Bar Holding Name, Navigation Bar and Slider For Language End -->
+
+
+    <div class="grid">
+      <!-- Center Of the Website Start -->
+      <main>
+        <!-- About Section Start -->
+        <section class="card" id="about">
+          <h2 data-key="about_title">About</h2>
+          <p data-key="about_text">Hi, I'm Adarsh — a builder, a problem-solver, and an engineer who loves connecting
+            innovation with real-world impact. I am a Masters Student At Technishe Universitat Hamburg Harburg.
+            I have reviously worked as a Software developer and a Function Responsible at BOSCH for Airbags
+            I love working in the field of AI, ML and IoT and am always in the loop to learn, research and contribute
+            more.</p>
+        </section>
+        <!-- About Section End -->
+
+        <!-- Projects Section Start -->
+        <section class="card" id="projects">
+          <h2 data-key="projects_title">Projects</h2>
+          <div class="projects">
+            <article class="project">
+              <!-- SVG placeholder for hardware image -->
+              <svg width="100%" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg"
+                style="background:#071827;border-radius:8px">
+                <g fill="#072b3a" font-family="sans-serif" font-size="12">
+                  <rect x="12" y="12" width="120" height="80" rx="6" fill="#082f3c" />
+                  <rect x="150" y="18" width="220" height="24" rx="6" fill="#092f3b" />
+                </g>
+                <text x="26" y="52" fill="#19e0c0" font-weight="600">Development Of Uncrewed Vehicle
+                  Prototype Using Deep Learning and IOT</text>
+                <text x="26" y="74" fill="#9fbcc3">Raspberry Pi 4 | Arduino | OpenCV | Sensor Intergration | PCB
+                  Designing </text>
+              </svg>
+              <h4 data-key="proj1_title">Development Of Uncrewed Vehicle Prototype Using Deep Learning and IOT</h4>
+              <div class="meta" data-key="proj1_desc">Developed a Software-Defined Vehicle(SDV) prototype featuring
+                three driving modes: Manual, Semi-Automatic
+                (Adaptive Cruise Control) and Autonomous (Lane Detection) integrated with safety features like accident
+                detection. The mobile application enables communication with the vehicle and seamless drive mode
+                transitions</div>
+              <div style="margin-top:8px"><a href="#" data-key="proj1_link">View code</a></div>
+            </article>
+
+            <article class="project">
+              <!-- SVG placeholder for hardware image -->
+              <svg width="100%" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg"
+                style="background:#071827;border-radius:8px">
+                <text x="20" y="40" fill="#19e0c0" font-weight="700">Jack - The Personal Assistant</text>
+                <text x="20" y="64" fill="#9fbcc3">Python | NLTK | Speech Recognition</text>
+              </svg>
+              <h4 data-key="proj2_title">Jack - The Personal Assistant</h4>
+              <div class="meta" data-key="proj2_desc">Developed a personal assistant in Python using libraries like
+                NLTK, Speech Recognition, and APIs for tasks such as weather
+                reporting,WhatsApp messaging, email management, and COVID case updates. Inturn integrated a depression
+                therapy feature, providing support through conversation
+                and resources to improve user well-being.</div>
+              <div style="margin-top:8px"><a href="#" data-key="proj2_link">View code</a></div>
+            </article>
+          </div>
+        </section>
+        <!-- Projects Section End -->
+
+        <!-- Experience Section Start -->
+        <section class="card" id="experience">
+          <h2 data-key="experience_title">Experience</h2>
+          <div>
+            <strong>BGSW (BOSCH Global Software Technologies)</strong><br>
+            <strong>Software Developer (Function Responsible)</strong>
+            <div class="muted">July 2023 — Sep 2025</div>
+            <div class="muted">Bengaluru, India</div>
+            <div data-key="experience1_desc">
+              <ul>
+                <li>Developed airbag software for Mercedes-Benz, handling COM stack (FlexRay, CAN, LIN) and Complex
+                  Device Drivers (CDD) across platforms (MMA, MRA2M, S-Class, E-Class).</li>
+                <li>Managed requirements in DOORS, ensuring compliance with ASIL, ISO 26262, and system standards.</li>
+                <li>Designed UML-based software architecture and detailed design models, conducted unit testing, HiL/SiL
+                  testing, and peer artifact reviews.</li>
+                <li>Resolved customer defects through root cause analysis, bug fixing, and validation.</li>
+                <li>Implemented new signals for FlexRay, LIN, and CAN in the COM stack, including routing, mapping,
+                  module configuration (EcuM, BswM, PduR, ComM, etc.), and RTE generation.</li>
+                <li>Handled change requests for modules like Battery Disconnect Management (BDM), Sleep Mode Management,
+                  E-Call (SOS Warning System), Warning Lamp Management, Crash Output, and Switch & Squib Management.
+                </li>
+                <li>Redesigned the Diagnostics Crash Output component, improving fault management and communication
+                  between Diagnostics, CDD, and COM — enhancing scalability and robustness in Mercedes-Benz Van
+                  projects.</li>
+                <li>Spearheaded deployment of SiL (Software-in-the-Loop) testing frameworks across global locations,
+                  collaborating with the SiL team in Vietnam to streamline integration and testing workflows for
+                  Mercedes-Benz projects.</li>
+              </ul>
+            </div>
+          </div>
+          <br>
+          <div>
+            <strong>Project Trainee</strong>
+            <div class="muted">Sep 2022 — June 2023</div>
+            <div class="muted">Bengaluru, India</div>
+            <div data-key="experience2_desc">
+              <ul>
+                <li>Designed and developed a GUI-based Remote Target Access Solution for GRA (Graphics Domain), enabling
+                  remote interaction with BOSCH graphics team ECUs from General Motors and Integrated key
+                  functionalities like hardware control, software executions, ECU flashing,switch configuration and switch hardware control,
+                  thereby improving efficiency by 80%.</li>
+                <li>Implemented real-time camera streaming feature for remote lab monitoring, enhancing visibility and
+                  debugging
+                  capabilities. Developed the solution with collaboration and support from the tech architect, gaining
+                  experience on full software development cycle from architecture design to deployment further on
+                  pitching at ADIT GmbH workshop,
+                  ensuring scalability and robustness for future enhancements.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- Experience Section End -->
+
+        <!-- Patent and Research Section Starts -->
+        <section class="card" id="Patent & Research">
+          <h2 data-key="Patent_Research_title">Patent & Research</h2>
+          <div>
+            <div data-key="patent_research_description">
+              <ul>
+                <li> IJARIIT 2020: ”Pothole Detection For Accident Prevention : A Review </li>
+                <li>ICSTCEE 2023: ”Development Of An Uncrewed Vehicle Prototype Using Deep Learning And IOT</li>
+                <li>KSCST Funding:”Development Of An Uncrewed Vehicle Prototype Using Deep Learning And IOT” Please
+                  refer proposal No: 46S BE 2688</li>
+                <li>Intellectual Property Of India: Development Of Self-Driving Car Prototype (Application
+                  No:202241029012
+                  ·Issued Jun 10) </li>
+              </ul>
+            </div>
+
+          </div>
+        </section>
+        <!-- Patent and Research Section End -->
+
+        <!-- Course Section Start -->
+        <section class="card" id="Courses">
+          <h2 data-key="Courses_title">Courses</h2>
+          <div>
+            <div data-key="courses_description"></div>
+            <ul>
+
+            </ul>
+          </div>
+        </section>
+        <!-- Course Section End -->
+
+        <!-- ExtraCurricular/Awards Section Start -->
+        <section class="card" id="ExtraCirrucular">
+          <h2 data-key="ExtraCirrucular_title">ExtraCirrucular/Awards</h2>
+          <div>
+            <strong>REVA University Coders’ Club</strong>
+            <div class="muted">Technical Head | 2022 — 2023 </div>
+            <div data-key="extracirrucular1_description">Mentored and guided developers through workshops, collaborative projects, and
+              coding events, fostering skill growth and
+              engagement. Supported junior members in improving technical proficiency.</div>
+          </div>
+          <br>
+          <div>
+            <strong>FUN@WORK Mercedes Benz</strong>
+            <div class="muted">Lead | Oct 2023 — Sep 2025 </div>
+            <div data-key="extracirrucular2_description">🎉 As the Head of Fun at Work in my team, I took the initiative to organize
+              engaging activities and events that fostered collaboration and strengthened team bonding. 🤝 From fun games and creative
+              challenges 🎲 to team-building sessions and informal gatherings, I focused on creating a positive, energetic work culture 🌟 that encouraged participation, boosted morale,
+              and brought people closer together.</div>
+          </div>
+        </section>
+        <!-- ExtraCurricular/Awards Section End -->
+
+        <!-- Detailed Skills Overview Section Start -->
+         <section class="card" id="Skills_overview">
+          <h2 data-key="skills_overview_title">Complete Skills Overview</h2>
+          <p class="muted" data-key="skills_overview_note">*Proof* that I am versatile and adaptable hence, a honest overview of my skills.</p>
+
+          <!-- Filter Tabs -->
+          <div class="skill-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="hardware_boards">Hardware Boards</button>
+            <button class="filter-btn" data-filter="data-science">Data Science</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="languages">Languages</button>
+          </div>
+
+          <!-- Skills List -->
+          <div class="skills-container">
+
+            <div class="skill-bar hardware_boards">
+              <strong class="skill-name">Arduino</strong>
+              <div class="bar">
+                <div class="progress" style="width:80%"></div>
+                <span class="rating">4 / 5</span>
+              </div>
+            </div>
+            
+            <div class="skill-bar hardware_boards">
+              <strong class="skill-name">Raspberry Pi 4</strong>
+              <div class="bar">
+                <div class="progress" style="width:80%"></div>
+                <span class="rating">3 / 5</span>
+              </div>
+            </div>  
+
+            <div class="skill-bar hardware_boards">
+              <strong class="skill-name">STM 32 Development Board</strong>
+              <div class="bar">
+                <div class="progress" style="width:50%"></div>
+                <span class="rating">2 / 5</span>
+              </div>
+            </div>              
+
+            <div class="skill-bar data-science languages">
+              <strong class="skill-name">Python</strong>
+              <div class="bar">
+                <div class="progress" style="width:100%"></div>
+                <span class="rating">3 / 5</span>
+              </div>
+            </div>
+
+            <div class="skill-bar data-science">
+              <strong class="skill-name">Deep Learning</strong>
+              <div class="bar">
+                <div class="progress" style="width:80%"></div>
+                <span class="rating">3 / 5</span>
+              </div>
+            </div>
+
+            <div class="skill-bar data-science">
+              <strong class="skill-name">OpenCV</strong>
+              <div class="bar">
+                <div class="progress" style="width:80%"></div>
+                <span class="rating">3 / 5</span>
+              </div>
+            </div>
+
+            <div class="skill-bar data-science">
+              <strong class="skill-name">Machine Learning</strong>
+              <div class="bar">
+                <div class="progress" style="width:80%"></div>
+                <span class="rating">3 / 5</span>
+              </div>
+            </div>
+            
+
+            <div class="skill-bar web">
+              <strong class="skill-name">HTML</strong>
+              <div class="bar">
+                <div class="progress" style="width:80%"></div>
+                <span class="rating">4 / 5</span>
+              </div>
+            </div>
+
+            <div class="skill-bar web">
+              <strong class="skill-name">CSS</strong>
+              <div class="bar">
+                <div class="progress" style="width:80%"></div>
+                <span class="rating">4 / 5</span>
+              </div>
+            </div>
+
+            <div class="skill-bar web">
+              <strong class="skill-name">Java Script</strong>
+              <div class="bar">
+                <div class="progress" style="width:80%"></div>
+                <span class="rating">4 / 5</span>
+              </div>
+            </div>
+
+            <div class="skill-bar web">
+              <strong class="skill-name">Flask</strong>
+              <div class="bar">
+                <div class="progress" style="width:80%"></div>
+                <span class="rating">3 / 5</span>
+              </div>
+            </div>            
+            
+            <div class="skill-bar languages">
+              <strong class="skill-name">C/C++</strong>
+              <div class="bar">
+                <div class="progress" style="width:100%"></div>
+                <span class="rating">4 / 5</span>
+              </div>
+            </div> 
+
+            
+            <div class="skill-bar languages web">
+              <strong class="skill-name">English</strong>
+              <div class="bar">
+                <div class="progress" style="width:100%"></div>
+                <span class="rating">5 / 5</span>
+              </div>
+            </div>
+
+            <div class="skill-bar languages web">
+              <strong class="skill-name">C Sharp</strong>
+              <div class="bar">
+                <div class="progress" style="width:100%"></div>
+                <span class="rating">5 / 5</span>
+              </div>
+            </div>            
+
+            
+          </div>
+        </section>
+        <!-- Detailed Skills Overview Section End --> 
+
+      </main>
+      <!-- Center Of the Website End -->
+
+      <!-- Side Panel Start -->
+      <aside>
+        <!-- Skills Card Start -->
+        <div class="card">
+          <h3 data-key="skills_title" id="Skills">Skills</h3>
+          <div class="skills">
+            <span class="chip">Embedded C</span>
+            <span class="chip">C++</span>
+            <span class="chip">Python</span>
+            <span class="chip">Java</span>
+            <span class="chip">HTML / CSS</span>
+            <span class="chip">RTOS</span>
+            <span class="chip">Arduino Programming</span>
+            <span class="chip">Embedded Linux</span>
+            <span class="chip">Flask</span>
+            <span class="chip">Machine Learning</span>
+            <span class="chip">Vector CANoe</span>
+            <span class="chip">Vector CAST</span>
+            <span class="chip">AUTOSAR</span>
+            <span class="chip">Agile & V-Model</span>
+            <span class="chip">Jira</span>
+            <span class="chip">ALM</span>
+            <span class="chip">I2C / SPI / UART</span>
+            <span class="chip">GPIO</span>
+            <span class="chip">Socket Programming</span>
+            <span class="chip">SSH Tunneling</span>
+            <span class="chip">IBM Rhapsody</span>
+            <span class="chip">CANalyzer</span>
+            <span class="chip">CANdela Studio</span>
+            <span class="chip">ARXML Visualizer</span>
+            <span class="chip">Da Vinci Configurator</span>
+            <span class="chip">Git</span>
+            <br>
+            <!-- For the detailed skills Button -->
+            <a class="btn" id="skillsBtn" href="#Skills_overview" data-key="skills_btn">
+              View Detailed Skills
+            </a>
+          </div>
+        </div>
+
+
+
+        <!-- Skills Card End -->
+
+        <!-- Education Card Start -->
+        <div class="card">
+          <h3 data-key="education_title">Education</h3>
+          <div style="margin-top: 16px;">
+            <strong>Masters in Information and Communication Systems</strong><br />
+            <span class="muted">Techniche Universitat Hamburg Harburg (TUHH) , Hamburg, Germany</span><br />
+            <span class="muted">Oct 2025 - Present</span><br />
+            <span class="muted">CGPA: </span>
+          </div>
+          <div style="margin-top: 16px;">
+            <strong>B.Tech in Electronics and Communications Engineering</strong><br />
+            <span class="muted">REVA University, Bengaluru, India</span><br />
+            <span class="muted"> 2023</span><br />
+            <span class="muted">CGPA: 9.23</span>
+          </div>
+          <div style="margin-top: 16px;">
+            <strong>Pre University Degree</strong><br />
+            <span class="muted">ASC Independent PU College, Bengaluru, India</span><br />
+            <span class="muted">2019</span><br />
+            <span class="muted">CGPA: 8.74</span>
+          </div>
+          <div style="margin-top: 16px;">
+            <strong>High School Certificate - ICSE </strong><br />
+            <span class="muted">VLS International School, Bengaluru, India</span><br />
+            <span class="muted">2017</span><br />
+            <span class="muted">CGPA: 8.7</span>
+          </div>
+        </div>
+        <!-- Education Card End -->
+
+        <!-- Download Resume Card Start -->
+        <div class="card">
+          <h3 data-key="resume_title" id="Resume">Resume</h3>
+          <p class="muted" data-key="resume_description">Download a printable copy of my resume (PDF).</p>
+          <a class="btn" id="resumeBtn" href="resume.pdf" download data-key="resume_btn">Download Resume</a>
+        </div>
+        <!-- Download Resume Card End -->
+
+        <!-- Personal Interest Card Start -->
+        <div class="card" id="Personal Interests">
+          <h3 data-key="personal_interests_title"> 🌟 Personal Interests</h3>
+          <p data-key="personal_description_1">🥾 Hiking & trekking adventures in the great outdoors</p>
+          <p data-key="personal_description_2">🌍 Traveled across half of India, exploring its diversity</p>
+          <p data-key="personal_description_3">🤝 Passionate about connecting with new cultures & people</p>
+          <p data-key="personal_description_4">🍳 Love cooking and experimenting with global cuisines</p>
+          <p data-key="personal_description_5">🗣️ Multilingual — fluent in 5 languages, currently pursuing my 6th language German A2 </p>
+          </ul>
+        </div>
+        <!-- Personal Interest Card End -->
+
+        <!-- Contact Card Start -->
+        <div class="card" id="Contact">
+          <h3 data-key="contact_title">Contact</h3>
+          <div class="contact-icons" style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/c-sai-adarsh-varma-8560b3208/" target="_blank" title="LinkedIn"
+              style="display:flex;align-items:center;gap:6px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.76 0-5 2.24-5 
+                  5v14c0 2.76 2.24 5 5 
+                  5h14c2.76 0 5-2.24 
+                  5-5v-14c0-2.76-2.24-5-5-5zm-11 
+                  19h-3v-10h3v10zm-1.5-11.28c-.97 
+                  0-1.75-.79-1.75-1.76s.78-1.76 
+                  1.75-1.76 1.75.79 
+                  1.75 1.76-.78 1.76-1.75 1.76zm13.5 
+                  11.28h-3v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 
+                  0-2.16 1.46-2.16 2.96v5.7h-3v-10h2.88v1.37h.04c.4-.76 
+                  1.38-1.55 2.84-1.55 3.04 0 3.6 2 3.6 4.59v5.59z" />
+              </svg>
+              <span style="font-size: 14px;">linkedin.com/in/CSaiAdarshVarma</span>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com/yourprofile" target="_blank" title="Instagram"
+              style="display:flex;align-items:center;gap:6px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 2C4.24 2 2 4.24 2 
+                  7v10c0 2.76 2.24 5 5 
+                  5h10c2.76 0 5-2.24 
+                  5-5V7c0-2.76-2.24-5-5-5H7zm10 
+                  2c1.65 0 3 1.35 3 3v10c0 
+                  1.65-1.35 3-3 3H7c-1.65 
+                  0-3-1.35-3-3V7c0-1.65 
+                  1.35-3 3-3h10zm-5 3c-2.76 0-5 
+                  2.24-5 5s2.24 5 5 
+                  5 5-2.24 5-5-2.24-5-5-5zm0 
+                  2c1.65 0 3 1.35 3 3s-1.35 3-3 
+                  3-3-1.35-3-3 1.35-3 3-3zm4.5-.75a1.25 
+                  1.25 0 1 0 0-2.5 1.25 
+                  1.25 0 0 0 0 2.5z" />
+              </svg>
+              <span style="font-size: 14px;">instagram.com/adarzh_varma</span>
+            </a>
+
+            <!-- Email with visible text -->
+            <a href="mailto:saiadarshvarma@gmail.com" style="display:flex;align-items:center;gap:6px;" title="Email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-2 
+                  .9-2 2v12c0 1.1.9 2 2 
+                  2h16c1.1 0 2-.9 
+                  2-2V6c0-1.1-.9-2-2-2zm0 
+                  4-8 5-8-5V6l8 
+                  5 8-5v2z" />
+              </svg>
+              <span style="font-size: 14px;">saiadarshvarma@gmail.com</span>
+            </a>
+
+            <!-- LeetCode -->
+            <a href="https://leetcode.com/yourprofile" target="_blank" title="LeetCode">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.5 17H10l-3-3 
+                  3-3h7.5v2H12.5l-1 1 
+                  1 1H17.5v2zM20 
+                  12c0 4.41-3.59 8-8 
+                  8s-8-3.59-8-8 3.59-8 
+                  8-8 8 3.59 8 8zM2 12C2 
+                  6.48 6.48 2 12 2s10 
+                  4.48 10 10-4.48 10-10 
+                  10S2 17.52 2 12z" />
+              </svg>
+              <span style="font-size: 14px;">Leet Code</span>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/AdarzhVarma" target="_blank" title="GitHub"
+              style="display:flex;align-items:center;gap:6px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 .5C5.73.5.5 
+                    5.73.5 12c0 5.08 3.29 9.38 
+                    7.86 10.91.58.11.79-.25.79-.56 
+                    0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.3-1.72-1.3-1.72-1.07-.73.08-.72.08-.72 
+                    1.18.08 1.8 1.21 1.8 1.21 1.05 1.79 2.75 
+                    1.27 3.42.97.11-.76.41-1.27.75-1.56-2.55-.29-5.23-1.28-5.23-5.72 
+                    0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 
+                    0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 5.79 
+                    0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 
+                    3.05.74.81 1.19 1.84 1.19 3.1 
+                    0 4.45-2.69 5.43-5.25 5.71.42.36.8 1.07.8 
+                    2.16 0 1.56-.01 2.81-.01 3.19 
+                    0 .31.21.68.8.56A10.51 10.51 0 0 0 23.5 
+                    12c0-6.27-5.23-11.5-11.5-11.5z" />
+              </svg>
+              <span style="font-size: 14px;">github.com/AdarzhVarma</span>
+            </a>
+          </div>
+        </div>
+        <!-- Contact Card Ends -->
+      </aside>
+      <!-- Side Panel Ends -->
+    </div>
+
+    <!-- Ending page Statement Line Starts -->
+    <footer>
+      <div class="muted">Made With Help Of Jarvis 🤖🧠👩‍💻 </div>
+    </footer>
+    <!-- Ending page Statement Line Ends -->
+  </div>
+  <!-- Link to external JS -->
+  <script src="script.js"></script>
+</body>
+</html>
