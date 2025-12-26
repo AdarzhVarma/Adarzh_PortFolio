@@ -398,3 +398,38 @@ filterBtns.forEach(btn => {
 });
 
 
+
+const toggleButton = document.getElementById('theme-switch');
+const themeLink = document.getElementById('theme-link');
+
+// Function to update icons
+function updateIcons() {
+    const moon = toggleButton.querySelector('svg:first-child');
+    const sun = toggleButton.querySelector('svg:last-child');
+    if (themeLink.href.includes('style.css')) {
+        moon.style.display = 'block';  // show moon in light mode
+        sun.style.display = 'none';    // hide sun
+    } else {
+        moon.style.display = 'none';   // hide moon in dark mode
+        sun.style.display = 'block';   // show sun
+    }
+}
+
+// Load saved theme from localStorage
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    themeLink.href = 'dark_mode.css';
+}
+updateIcons();
+
+// Toggle theme on button click
+toggleButton.addEventListener('click', () => {
+    if (themeLink.href.includes('style.css')) {
+        themeLink.href = 'dark_mode.css';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeLink.href = 'style.css';
+        localStorage.setItem('theme', 'light');
+    }
+    updateIcons();
+});

@@ -1,0 +1,304 @@
+:root {
+    --bg: #121212;
+    /* Very dark background */
+    --card: #1e1e1e;
+    /* Dark gray cards */
+    --muted: #dddddd;
+    /* Muted medium gray text */ /* The about text and the inside text of about and uni insfo years etc before it was grey*/
+    --accent: #aaaaaa;
+    /* Soft light gray accent */
+    --glass: rgba(255, 255, 255, 0.04);
+    --maxw: 1100px;
+    --radius: 12px;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: #ddd;
+    /* Light gray text for good contrast */
+    scroll-padding-top: 144px;
+    /* set this to your header height */
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+    color: #fff;
+    /* bright on hover */
+    outline: none;
+}
+
+.wrap {
+    max-width: var(--maxw);
+    margin: 28px auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    background: #292929;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.6rem;
+    user-select: none;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #eee;
+}
+
+p.lead {
+    margin: 4px 0 0;
+    color: var(--muted);
+}
+
+/* language toggle */
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toggle {
+    position: relative;
+    width: 64px;
+    height: 30px;
+    background: var(--glass);
+    border-radius: 20px;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toggle input {
+    display: none;
+}
+
+.knob {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #383838;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+    transition: transform 0.22s ease;
+}
+
+.labels {
+    font-size: 1.2rem;
+    color: var(--muted);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Layout */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+main {
+    background: transparent;
+}
+
+aside {
+    background: #222222;
+    padding: 18px;
+    border-radius: var(--radius);
+    min-height: 240px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+
+.card {
+    background: var(--card);
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    color: #f5f1f1;
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.03);
+}
+
+
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip {
+    background: #3b3b3b;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #edecec;
+    ;
+    user-select: none;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+}
+
+.project {
+    padding: 12px;
+    border-radius: 10px;
+    background: #292929;
+    color: #ccc;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.project:hover {
+    background: #383838;
+}
+
+.project h4 {
+    margin: 6px 0 4px;
+    color: #eee;
+}
+
+.meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+footer {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* Small screens */
+@media (max-width: 880px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    aside {
+        order: 2;
+    }
+}
+
+/* Light minor animations for knob */
+input:checked+.knob {
+    transform: translateX(32px);
+}
+
+/* Resume button */
+.btn {
+    background: linear-gradient(90deg, var(--accent), #bbbbbb);
+    color: #222;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(170, 170, 170, 0.7);
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus {
+    background: #d1d1d1;
+    color: #111;
+    outline: none;
+}
+
+/* code like block */
+pre.sample {
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 8px;
+    color: #a7a7a7;
+    overflow: auto;
+}
+
+/* small helper */
+.muted {
+    color: var(--muted);
+}
+
+
+/* Navigation bar */
+.navbar {
+    display: flex;
+    gap: 24px;
+    margin: 20px 0 8px;
+    flex-wrap: wrap;
+    background-color: var(--background);
+    /* Use your page bg color variable to ensure seamless finish */
+}
+
+.navbar button {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.89rem;
+    cursor: pointer;
+    padding: 5px 5px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar button:hover {
+    background-color: #bcbcbc;
+    color: #121212;
+    outline: none;
+}
+
+/*
+    .navbar button.active {
+    background-color: #bcbcbc;
+    color: #121212;
+    }
+    */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* stay above other content */
+    background: var(--background, #121212);
+    /* same bg as your header/nav */
+    padding: 5px;
+
+
+}
