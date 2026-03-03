@@ -3,12 +3,19 @@ const T = {
     en: {
         /* Personal Details English */
         name: 'Sai Adarsh Varma Chittari',
-        headline: 'Embedded Software Engineer | Function Responsible Complex Device Drivers Airbags | C/C++',
+        headline: 'Software Engineer | M.Sc. Student at TUHH | • Embedded • Web • AI | Formula Student Germany (Egnition Hamburg) | Ex-Co Function Resp CDD Bosch (Mercedes-Benz)',
         about_title: 'About',
-        about_text: `Hi, I am Adarsh — a builder, a problem-solver, and an engineer who loves connecting 
-        innovation with real-world impact. I am a Masters Student At Technishe Universitat Hamburg Harburg. 
-        I have reviously worked as a Software developer and a Function Responsible at BOSCH for Airbags. 
-        I love working in the field of AI, ML and IoT and am always in the loop to learn, research and contribute more.`,
+        about_text: `
+        Hi, I’m Adarsh! 👋✨<br />
+        I am a <strong>Master’s student at the Hamburg University of Technology (TUHH)</strong> 🏫🎒 studying Information and Communication Systems, specializing in Secure IT and Dependable Systems🧑‍💻. Previously, I worked as a <strong>Co-Function Responsible</strong> for complex device drivers for airbag software for <strong>Mercedes-Benz at Bosch</strong>, orchestrating the software backbone for their most prestigious vehicle platforms across global teams <strong>(Germany and Vietnam)</strong>.<br />
+        I have been a part of building <strong>awesome solutions in hackathons, organized and presented solutions at corporate tech events, led technical clubs, and managed full product life cycles</strong>. I thrive on solving complex technical bottlenecks.<br />
+        With a <strong>track record of 10+ projects and 4 Excellence Awards from Bosch, my expertise spans Embedded Systems, Full-Stack Web Development, ML/AI, and Security. Whether leading technical projects as a Product Owner or handling software design and development</strong>, I build systems that are as secure as they are smart! 🛡️🌐<br />
+        <strong>What gets me excited 🤔:</strong><br /> 
+        🏎️ Motorsport Tech: Engineering race car electronics and software as smart as the driver at e-gnition Hamburg.<br />
+        🤖 Edge AI: Diving deep into TinyML to bring intelligent hardware.<br />
+        🔌 IoT + Web: Turning ideas into seamless, real-world products.<br />
+        I’m always in the loop to research, build, and scale the next generation of technology. <br />
+        <strong>Let's connect and create something impactful!</strong> ⚡🤝🔥`,
 
         /* Navigation Bar */
         nav_about_text: 'About',
@@ -144,17 +151,19 @@ const T = {
     de: {
         /* Personal Details Deutsch */
         name: 'Sai Adarsh Varma Chittari',
-        headline: 'Embedded-Software-Ingenieur | Funktion Verantwortlich Komplexe Gerätetreiber Airbags | C/C++',
+        headline: 'Software Ingenieur | Masterstudent an der TUHH | • Embedded • Web • AI | Formula Student Germany (Egnition Hamburg) | Ex-Co Function Resp CDD Bosch (Mercedes-Benz)',
         about_title: 'Über mich',
         about_text: `
-        Hallo, ich bin Adarsh – ein Konstrukteur, ein Problemlöser und ein Ingenieur, 
-        der es liebt, Innovationen mit der realen Welt zu verbinden. 
-        Ich bin Masterstudent an der Technischen Universität Hamburg Harburg. 
-        Zuvor habe ich als Softwareentwickler und Funktionsverantwortlicher bei BOSCH 
-        für Airbags gearbeitet. 
-        Ich liebe es, in den Bereichen AI, ML und IoT zu arbeiten und bin immer 
-        auf dem Laufenden, um zu lernen, zu forschen und mehr beizutragen.
-      `,
+        Hallo, ich bin Adarsh! 👋✨
+        Ich bin <strong>Masterstudent an der Technischen Universität Hamburg (TUHH)</strong> 🏫🎒 im Studiengang Informations- und Kommunikationstechnik mit dem Schwerpunkt "Secure IT and Dependable Systems"🧑‍💻. Zuvor war ich als <strong>Co-Function Responsible für komplexe Gerätetreiber (CDD) in der Airbag-Software für Mercedes-Benz</strong> bei Bosch tätig, wo ich das Software-Rückgrat für prestigeträchtige Fahrzeugplattformen in<strong> globalen Teams (Deutschland und Vietnam)</strong> mitgestaltet habe.<br />
+        Ich habe innovative Lösungen in <strong>Hackathons entwickelt, technische Lösungen auf Corporate-Events präsentiert, Technik-Clubs geleitet und den gesamten Produktlebenszyklus begleitet</strong>. Es ist meine Leidenschaft, komplexe technische Engpässe zu lösen.<br />
+        Mit einer <strong>Bilanz von über 10 Projekten und 4 "Excellence Awards" von Bosch umfasst meine Expertise Embedded Systems, Full-Stack Webentwicklung, ML/AI und Security. Ob als Product Owner in der technischen Projektleitung oder in der Softwarearchitektur und -entwicklung </strong>– ich baue Systeme, die ebenso sicher wie intelligent sind! 🛡️🌐<br />
+        <strong>Was mich begeistert 🤔:</strong><br /> 
+        🏎️ Motorsport-Technologie: Entwicklung von Elektronik und Software für Rennwagen, die genauso intelligent sind wie der Fahrer bei e-gnition Hamburg.<br />
+        🤖 Edge-KI: Ich tauche tief in TinyML ein, um intelligente Hardware zu entwickeln.<br />
+        🔌 IoT + Web: Ich verwandle Ideen in nahtlose, realitätsnahe Produkte.<br />
+        Ich bin immer auf dem Laufenden, um die nächste Generation von Technologien zu erforschen, zu entwickeln und zu skalieren.<br /> 
+        <strong>Lassen Sie uns zusammenarbeiten und etwas Beeindruckendes schaffen!</strong>⚡🤝🔥`,
 
         /* Navigation Bar Deutsch */
         nav_about_text: 'Über mich',
@@ -432,4 +441,27 @@ toggleButton.addEventListener('click', () => {
         localStorage.setItem('theme', 'light');
     }
     updateIcons();
+});
+
+
+
+// ── Avatar photo overlay ──
+const avatarBtn    = document.getElementById('avatarBtn');
+const avatarOverlay = document.getElementById('avatarOverlay');
+const overlayClose  = document.getElementById('overlayClose');
+
+function openOverlay()  { avatarOverlay.classList.add('open');    document.body.style.overflow = 'hidden'; }
+function closeOverlay() { avatarOverlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+avatarBtn.addEventListener('click', openOverlay);
+overlayClose.addEventListener('click', closeOverlay);
+
+// Close on backdrop click (outside the card)
+avatarOverlay.addEventListener('click', (e) => {
+  if (e.target === avatarOverlay) closeOverlay();
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeOverlay();
 });

@@ -35,11 +35,13 @@ This file contains:
       <header>
         <!-- Name and Designation -->
         <div class="brand">
-          <div class="avatar">CV</div>
+          <div class="avatar" id="avatarBtn" title="View photo">
+            <img src="D:\AdarzhPotfolio_Repo\Adarzh_PortFolio\imgsrc\Final_Portfolio_Pic.jpg" alt="Sai Adarsh" onerror="this.style.display='none'">
+            <span class="avatar-fallback"></span>
+          </div>
           <div>
             <h1 data-key="name">Sai Adarsh Varma Chittari</h1>
-            <p class="lead" data-key="headline">Embedded Software Engineer | Function Responsible Complex Device Drivers
-              Airbags | C/C++ </p>
+            <p class="lead" data-key="headline">Embedded Software Engineer | Function Responsible Complex Device Drivers Airbags | C/C++</p>
           </div>
         </div>
 
@@ -72,12 +74,28 @@ This file contains:
         <!-- Note: Incase Language Feature is Not Needed Comment Below Section and Check Java Script File -->
         <!-- Language Slider -->
         <div class="lang-toggle">
-          <div class="labels"><span>🇬🇧 EN</span></div>
+          <div class="labels">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="24" height="14">
+              <rect width="60" height="30" fill="#012169"/>
+              <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+              <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/>
+              <path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/>
+              <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/>
+            </svg>
+            <span>EN</span>
+          </div>
           <label class="toggle" title="English / Deutsch">
             <input id="langCheck" type="checkbox" aria-label="Switch language">
             <div class="knob"></div>
           </label>
-          <div class="labels"><span>DE 🇩🇪</span></div>
+          <div class="labels">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3" width="24" height="14">
+              <rect width="5" height="1" fill="#000"/>
+              <rect y="1" width="5" height="1" fill="#D00"/>
+              <rect y="2" width="5" height="1" fill="#FFCE00"/>
+            </svg>
+            <span>DE</span>
+          </div>
         </div>
         <!-- Note: Incase Language Feature is Not Needed Comment Above Section and Check Java Script File -->
       </header>
@@ -106,11 +124,22 @@ This file contains:
         <!-- About Section Start -->
         <section class="card" id="about">
           <h2 data-key="about_title">About</h2>
-          <p data-key="about_text">Hi, I'm Adarsh — a builder, a problem-solver, and an engineer who loves connecting
-            innovation with real-world impact. I am a Masters Student At Technishe Universitat Hamburg Harburg.
-            I have reviously worked as a Software developer and a Function Responsible at BOSCH for Airbags
-            I love working in the field of AI, ML and IoT and am always in the loop to learn, research and contribute
-            more.</p>
+          <p data-key="about_text">
+            Hi, I’m Adarsh!👋✨
+            I am a Master’s student at the Hamburg University of Technology (TUHH) 🏫🎒 studying Information and Communication Systems, specializing in Secure IT and Dependable Systems. Previously, 
+            I worked as a Co-Function Responsible for complex device drivers for airbag software for Mercedes-Benz at Bosch, orchestrating the software backbone for their most prestigious vehicle platforms across global teams (Germany and Vietnam).
+            I have been a part of building awesome solutions in hackathons, organized and presented solutions at corporate tech events, led technical clubs, 
+            and managed full product life cycles. I thrive on solving complex technical bottlenecks. 
+            With a track record of 10+ projects and 4 Excellence Awards from Bosch, my expertise spans Embedded Systems, 
+            Full-Stack Web Development, ML/AI, and Security. Whether leading technical projects as a Product Owner or 
+            handling software design and development, I build systems that are as secure as they are smart! 🛡️🌐 
+            What gets me excited 🤔: 
+             🏎️ Motorsport Tech: Engineering race car electronics and software as smart as the driver at e-gnition Hamburg.
+             🤖 Edge AI: Diving deep into TinyML to bring intelligence to the hardware level.
+             🔌 IoT + Web: Turning hardware ideas into seamless, real-world products.
+             I’m always in the loop to research, build, and scale the next generation of technology. 
+             Let's connect and create something impactful! ⚡🤝🔥
+            </p>
         </section>
         <!-- About Section End -->
 
@@ -607,6 +636,18 @@ This file contains:
     </footer>
     <!-- Ending page Statement Line Ends -->
   </div>
+
+  <!-- Avatar Photo Overlay -->
+  <div class="avatar-overlay" id="avatarOverlay">
+    <div class="overlay-card">
+      <button class="overlay-close" id="overlayClose">&#x2715;</button>
+      <img src="D:\AdarzhPotfolio_Repo\Adarzh_PortFolio\imgsrc\Final_Portfolio_Pic.jpg" alt="Sai Adarsh Varma Chittari">
+      <h2>Sai Adarsh Varma Chittari</h2>
+      <p>Embedded Software Engineer</p>
+      <p>📍 Hamburg, Germany</p>
+    </div>
+  </div>
+
   <!-- Link to external JS -->
   <script src="script.js"></script>
 </body>
