@@ -1,654 +1,948 @@
-<!--
-Embedded Software Engineer Portfolio (Single-file HTML)
-Ready to host on GitHub Pages: place this file as index.html in repo "yourusername.github.io"
-
-How to customize quickly:
- - Replace NAME, HEADLINE, and placeholder text inside the translations object.
- - Replace project images by swapping the <svg> placeholders or add files and update src.
- - Add your resume file as resume.pdf in the same repo (or update link below).
- - Commit & push to GitHub, go to Settings → Pages and enable site from main branch / root.
-
-This file contains:
- - A language slider (EN / DE) toggling all visible text without reload.
- - Embedded-friendly sections: About, Skills, Projects, Experience, Education, Resume.
- - Responsive layout, no external dependencies.
--->
-
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title> C Sai Adarsh Varma — Embedded Software Engineer</title>
-  <meta name="description" content="Embedded Software Engineer portfolio — C/C++, RTOS, STM32, CAN. Ready-to-host GitHub Pages." />
-  <!-- CSS External File Linking -->
+  <title>C Sai Adarsh Varma — Embedded Software Engineer</title>
+  <meta name="description" content="Embedded Software Engineer portfolio — C/C++, RTOS, STM32, CAN." />
   <link rel="stylesheet" href="style.css" />
-  <!-- Theme CSS (swapped dynamically) -->
-  <link id="theme-link" rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <!-- Top Bar Holding Name, Navigation Bar and Slider For Language Start -->
-    <div class="topbar">
-      <header>
-        <!-- Name and Designation -->
-        <div class="brand">
-          <div class="avatar" id="avatarBtn" title="View photo">
-            <img src="imgsrc\Final_Portfolio_Pic.jpg" alt="Sai Adarsh" onerror="this.style.display='none'">
-            <span class="avatar-fallback"></span>
-          </div>
-          <div>
-            <h1 data-key="name">Sai Adarsh Varma Chittari</h1>
-            <p class="lead" data-key="headline">Embedded Software Engineer | Function Responsible Complex Device Drivers Airbags | C/C++</p>
-          </div>
+  <!-- ══════════════════════════════════════════════════════
+       TOPBAR — sticky header with name, theme, language
+       ══════════════════════════════════════════════════════ -->
+  <div class="topbar">
+    <header>
+
+      <!-- Avatar + Name + Headline -->
+      <div class="brand">
+        <div class="avatar" id="avatarBtn" title="View photo">
+          <img src="imgsrc/Final_Portfolio_Pic.jpg" alt="Sai Adarsh" onerror="this.style.display='none'">
         </div>
-
-
-        <div class="header-controls">
-          <!-- Theme toggle button -->
-          <button id="theme-switch" aria-label="Toggle theme">
-              <!-- Moon for dark mode (centered) -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
-                </svg>
-
-              <!-- Sun for light mode -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="5"/>
-                <g stroke="#111" stroke-width="2">
-                  <line x1="12" y1="1" x2="12" y2="4"/>
-                  <line x1="12" y1="20" x2="12" y2="23"/>
-                  <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/>
-                  <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
-                  <line x1="1" y1="12" x2="4" y2="12"/>
-                  <line x1="20" y1="12" x2="23" y2="12"/>
-                  <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/>
-                  <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
-                </g>
-              </svg>
-          </button>
+        <div class="brand-text">
+          <h1 data-key="name">Sai Adarsh Varma Chittari</h1>
+          <p class="lead" data-key="headline">Embedded Software Engineer | Function Responsible Complex Device Drivers Airbags | C/C++</p>
         </div>
-          
-        <!-- Note: Incase Language Feature is Not Needed Comment Below Section and Check Java Script File -->
-        <!-- Language Slider -->
-        <div class="lang-toggle">
-          <div class="labels">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="24" height="14">
-              <rect width="60" height="30" fill="#012169"/>
-              <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
-              <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/>
-              <path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/>
-              <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/>
-            </svg>
-            <span>EN</span>
-          </div>
-          <label class="toggle" title="English / Deutsch">
-            <input id="langCheck" type="checkbox" aria-label="Switch language">
-            <div class="knob"></div>
-          </label>
-          <div class="labels">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3" width="24" height="14">
-              <rect width="5" height="1" fill="#000"/>
-              <rect y="1" width="5" height="1" fill="#D00"/>
-              <rect y="2" width="5" height="1" fill="#FFCE00"/>
-            </svg>
-            <span>DE</span>
-          </div>
+      </div>
+
+      <!-- Theme Toggle Button -->
+      <div class="header-controls">
+        <button id="theme-switch" aria-label="Toggle theme">
+          <!-- Moon: visible in light mode -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
+          </svg>
+          <!-- Sun: visible in dark mode -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1"     x2="12"    y2="4"/>
+            <line x1="12" y1="20"    x2="12"    y2="23"/>
+            <line x1="4.22" y1="4.22"   x2="6.34"  y2="6.34"/>
+            <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
+            <line x1="1"  y1="12"    x2="4"     y2="12"/>
+            <line x1="20" y1="12"    x2="23"    y2="12"/>
+            <line x1="4.22"  y1="19.78" x2="6.34"  y2="17.66"/>
+            <line x1="17.66" y1="6.34"  x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Language Toggle EN / DE -->
+      <div class="lang-toggle">
+        <div class="labels">
+          <!-- UK flag -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="24" height="14">
+            <rect width="60" height="30" fill="#012169"/>
+            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/>
+            <path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/>
+            <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/>
+          </svg>
+          <span>EN</span>
         </div>
-        <!-- Note: Incase Language Feature is Not Needed Comment Above Section and Check Java Script File -->
-      </header>
-
-      <!-- Navigation bar -->
-      <nav class="navbar" aria-label="Page sections navigation">
-        <button type="button" data-target="about" data-key="nav_about_text">About</button>
-        <button type="button" data-target="projects" data-key="nav_projects_text">Projects</button>
-        <button type="button" data-target="experience" data-key="nav_experience_text">Experience</button>
-        <button type="button" data-target="Patent & Research" data-key="nav_Patent_Research_text">Patent &
-          Research</button>
-        <button type="button" data-target="Courses" data-key="nav_courses_text">Courses</button>
-        <button type="button" data-target="ExtraCirrucular"
-          data-key="nav_extracirrcular_text">ExtraCirrucular/Awards</button>
-        <button type="button" data-target="Skills" data-key="nav_skills_text">Skills</button>
-        <button type="button" data-target="Contact" data-key="nav_contact_text">Contact</button>
-        <button type="button" data-target="Resume" data-key="nav_resume_text">Download Resume</button>
-      </nav>
-    </div>
-    <!-- Top Bar Holding Name, Navigation Bar and Slider For Language End -->
-
-
-    <div class="grid">
-      <!-- Center Of the Website Start -->
-      <main>
-        <!-- About Section Start -->
-        <section class="card" id="about">
-          <h2 data-key="about_title">About</h2>
-          <p data-key="about_text">
-            Hi, I’m Adarsh!👋✨
-            I am a Master’s student at the Hamburg University of Technology (TUHH) 🏫🎒 studying Information and Communication Systems, specializing in Secure IT and Dependable Systems. Previously, 
-            I worked as a Co-Function Responsible for complex device drivers for airbag software for Mercedes-Benz at Bosch, orchestrating the software backbone for their most prestigious vehicle platforms across global teams (Germany and Vietnam).
-            I have been a part of building awesome solutions in hackathons, organized and presented solutions at corporate tech events, led technical clubs, 
-            and managed full product life cycles. I thrive on solving complex technical bottlenecks. 
-            With a track record of 10+ projects and 4 Excellence Awards from Bosch, my expertise spans Embedded Systems, 
-            Full-Stack Web Development, ML/AI, and Security. Whether leading technical projects as a Product Owner or 
-            handling software design and development, I build systems that are as secure as they are smart! 🛡️🌐 
-            What gets me excited 🤔: 
-             🏎️ Motorsport Tech: Engineering race car electronics and software as smart as the driver at e-gnition Hamburg.
-             🤖 Edge AI: Diving deep into TinyML to bring intelligence to the hardware level.
-             🔌 IoT + Web: Turning hardware ideas into seamless, real-world products.
-             I’m always in the loop to research, build, and scale the next generation of technology. 
-             Let's connect and create something impactful! ⚡🤝🔥
-            </p>
-        </section>
-        <!-- About Section End -->
-
-        <!-- Projects Section Start -->
-        <section class="card" id="projects">
-          <h2 data-key="projects_title">Projects</h2>
-          <div class="projects">
-            <article class="project">
-              <!-- SVG placeholder for hardware image -->
-              <svg width="100%" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg"
-                style="background:#071827;border-radius:8px">
-                <g fill="#072b3a" font-family="sans-serif" font-size="12">
-                  <rect x="12" y="12" width="120" height="80" rx="6" fill="#082f3c" />
-                  <rect x="150" y="18" width="220" height="24" rx="6" fill="#092f3b" />
-                </g>
-                <text x="26" y="52" fill="#19e0c0" font-weight="600">Development Of Uncrewed Vehicle
-                  Prototype Using Deep Learning and IOT</text>
-                <text x="26" y="74" fill="#9fbcc3">Raspberry Pi 4 | Arduino | OpenCV | Sensor Intergration | PCB
-                  Designing </text>
-              </svg>
-              <h4 data-key="proj1_title">Development Of Uncrewed Vehicle Prototype Using Deep Learning and IOT</h4>
-              <div class="meta" data-key="proj1_desc">Developed a Software-Defined Vehicle(SDV) prototype featuring
-                three driving modes: Manual, Semi-Automatic
-                (Adaptive Cruise Control) and Autonomous (Lane Detection) integrated with safety features like accident
-                detection. The mobile application enables communication with the vehicle and seamless drive mode
-                transitions</div>
-              <div style="margin-top:8px"><a href="#" data-key="proj1_link">View code</a></div>
-            </article>
-
-            <article class="project">
-              <!-- SVG placeholder for hardware image -->
-              <svg width="100%" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg"
-                style="background:#071827;border-radius:8px">
-                <text x="20" y="40" fill="#19e0c0" font-weight="700">Jack - The Personal Assistant</text>
-                <text x="20" y="64" fill="#9fbcc3">Python | NLTK | Speech Recognition</text>
-              </svg>
-              <h4 data-key="proj2_title">Jack - The Personal Assistant</h4>
-              <div class="meta" data-key="proj2_desc">Developed a personal assistant in Python using libraries like
-                NLTK, Speech Recognition, and APIs for tasks such as weather
-                reporting,WhatsApp messaging, email management, and COVID case updates. Inturn integrated a depression
-                therapy feature, providing support through conversation
-                and resources to improve user well-being.</div>
-              <div style="margin-top:8px"><a href="#" data-key="proj2_link">View code</a></div>
-            </article>
-          </div>
-        </section>
-        <!-- Projects Section End -->
-
-        <!-- Experience Section Start -->
-        <section class="card" id="experience">
-          <h2 data-key="experience_title">Experience</h2>
-          <div>
-            <strong>BGSW (BOSCH Global Software Technologies)</strong><br>
-            <strong>Software Developer (Function Responsible)</strong>
-            <div class="muted">July 2023 — Sep 2025</div>
-            <div class="muted">Bengaluru, India</div>
-            <div data-key="experience1_desc">
-              <ul>
-                <li>Developed airbag software for Mercedes-Benz, handling COM stack (FlexRay, CAN, LIN) and Complex
-                  Device Drivers (CDD) across platforms (MMA, MRA2M, S-Class, E-Class).</li>
-                <li>Managed requirements in DOORS, ensuring compliance with ASIL, ISO 26262, and system standards.</li>
-                <li>Designed UML-based software architecture and detailed design models, conducted unit testing, HiL/SiL
-                  testing, and peer artifact reviews.</li>
-                <li>Resolved customer defects through root cause analysis, bug fixing, and validation.</li>
-                <li>Implemented new signals for FlexRay, LIN, and CAN in the COM stack, including routing, mapping,
-                  module configuration (EcuM, BswM, PduR, ComM, etc.), and RTE generation.</li>
-                <li>Handled change requests for modules like Battery Disconnect Management (BDM), Sleep Mode Management,
-                  E-Call (SOS Warning System), Warning Lamp Management, Crash Output, and Switch & Squib Management.
-                </li>
-                <li>Redesigned the Diagnostics Crash Output component, improving fault management and communication
-                  between Diagnostics, CDD, and COM — enhancing scalability and robustness in Mercedes-Benz Van
-                  projects.</li>
-                <li>Spearheaded deployment of SiL (Software-in-the-Loop) testing frameworks across global locations,
-                  collaborating with the SiL team in Vietnam to streamline integration and testing workflows for
-                  Mercedes-Benz projects.</li>
-              </ul>
-            </div>
-          </div>
-          <br>
-          <div>
-            <strong>Project Trainee</strong>
-            <div class="muted">Sep 2022 — June 2023</div>
-            <div class="muted">Bengaluru, India</div>
-            <div data-key="experience2_desc">
-              <ul>
-                <li>Designed and developed a GUI-based Remote Target Access Solution for GRA (Graphics Domain), enabling
-                  remote interaction with BOSCH graphics team ECUs from General Motors and Integrated key
-                  functionalities like hardware control, software executions, ECU flashing,switch configuration and switch hardware control,
-                  thereby improving efficiency by 80%.</li>
-                <li>Implemented real-time camera streaming feature for remote lab monitoring, enhancing visibility and
-                  debugging
-                  capabilities. Developed the solution with collaboration and support from the tech architect, gaining
-                  experience on full software development cycle from architecture design to deployment further on
-                  pitching at ADIT GmbH workshop,
-                  ensuring scalability and robustness for future enhancements.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <!-- Experience Section End -->
-
-        <!-- Patent and Research Section Starts -->
-        <section class="card" id="Patent & Research">
-          <h2 data-key="Patent_Research_title">Patent & Research</h2>
-          <div>
-            <div data-key="patent_research_description">
-              <ul>
-                <li> IJARIIT 2020: ”Pothole Detection For Accident Prevention : A Review </li>
-                <li>ICSTCEE 2023: ”Development Of An Uncrewed Vehicle Prototype Using Deep Learning And IOT</li>
-                <li>KSCST Funding:”Development Of An Uncrewed Vehicle Prototype Using Deep Learning And IOT” Please
-                  refer proposal No: 46S BE 2688</li>
-                <li>Intellectual Property Of India: Development Of Self-Driving Car Prototype (Application
-                  No:202241029012
-                  ·Issued Jun 10) </li>
-              </ul>
-            </div>
-
-          </div>
-        </section>
-        <!-- Patent and Research Section End -->
-
-        <!-- Course Section Start -->
-        <section class="card" id="Courses">
-          <h2 data-key="Courses_title">Courses</h2>
-          <div>
-            <div data-key="courses_description"></div>
-            <ul>
-
-            </ul>
-          </div>
-        </section>
-        <!-- Course Section End -->
-
-        <!-- ExtraCurricular/Awards Section Start -->
-        <section class="card" id="ExtraCirrucular">
-          <h2 data-key="ExtraCirrucular_title">ExtraCirrucular/Awards</h2>
-          <div>
-            <strong>REVA University Coders’ Club</strong>
-            <div class="muted">Technical Head | 2022 — 2023 </div>
-            <div data-key="extracirrucular1_description">Mentored and guided developers through workshops, collaborative projects, and
-              coding events, fostering skill growth and
-              engagement. Supported junior members in improving technical proficiency.</div>
-          </div>
-          <br>
-          <div>
-            <strong>FUN@WORK Mercedes Benz</strong>
-            <div class="muted">Lead | Oct 2023 — Sep 2025 </div>
-            <div data-key="extracirrucular2_description">🎉 As the Head of Fun at Work in my team, I took the initiative to organize
-              engaging activities and events that fostered collaboration and strengthened team bonding. 🤝 From fun games and creative
-              challenges 🎲 to team-building sessions and informal gatherings, I focused on creating a positive, energetic work culture 🌟 that encouraged participation, boosted morale,
-              and brought people closer together.</div>
-          </div>
-        </section>
-        <!-- ExtraCurricular/Awards Section End -->
-
-        <!-- Detailed Skills Overview Section Start -->
-         <section class="card" id="Skills_overview">
-          <h2 data-key="skills_overview_title">Complete Skills Overview</h2>
-          <p class="muted" data-key="skills_overview_note">*Proof* that I am versatile and adaptable hence, a honest overview of my skills.</p>
-
-          <!-- Filter Tabs -->
-          <div class="skill-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="hardware_boards">Hardware Boards</button>
-            <button class="filter-btn" data-filter="data-science">Data Science</button>
-            <button class="filter-btn" data-filter="web">Web Development</button>
-            <button class="filter-btn" data-filter="languages">Languages</button>
-          </div>
-
-          <!-- Skills List -->
-          <div class="skills-container">
-
-            <div class="skill-bar hardware_boards">
-              <strong class="skill-name">Arduino</strong>
-              <div class="bar">
-                <div class="progress" style="width:80%"></div>
-                <span class="rating">4 / 5</span>
-              </div>
-            </div>
-            
-            <div class="skill-bar hardware_boards">
-              <strong class="skill-name">Raspberry Pi 4</strong>
-              <div class="bar">
-                <div class="progress" style="width:80%"></div>
-                <span class="rating">3 / 5</span>
-              </div>
-            </div>  
-
-            <div class="skill-bar hardware_boards">
-              <strong class="skill-name">STM 32 Development Board</strong>
-              <div class="bar">
-                <div class="progress" style="width:50%"></div>
-                <span class="rating">2 / 5</span>
-              </div>
-            </div>              
-
-            <div class="skill-bar data-science languages">
-              <strong class="skill-name">Python</strong>
-              <div class="bar">
-                <div class="progress" style="width:100%"></div>
-                <span class="rating">3 / 5</span>
-              </div>
-            </div>
-
-            <div class="skill-bar data-science">
-              <strong class="skill-name">Deep Learning</strong>
-              <div class="bar">
-                <div class="progress" style="width:80%"></div>
-                <span class="rating">3 / 5</span>
-              </div>
-            </div>
-
-            <div class="skill-bar data-science">
-              <strong class="skill-name">OpenCV</strong>
-              <div class="bar">
-                <div class="progress" style="width:80%"></div>
-                <span class="rating">3 / 5</span>
-              </div>
-            </div>
-
-            <div class="skill-bar data-science">
-              <strong class="skill-name">Machine Learning</strong>
-              <div class="bar">
-                <div class="progress" style="width:80%"></div>
-                <span class="rating">3 / 5</span>
-              </div>
-            </div>
-            
-
-            <div class="skill-bar web">
-              <strong class="skill-name">HTML</strong>
-              <div class="bar">
-                <div class="progress" style="width:80%"></div>
-                <span class="rating">4 / 5</span>
-              </div>
-            </div>
-
-            <div class="skill-bar web">
-              <strong class="skill-name">CSS</strong>
-              <div class="bar">
-                <div class="progress" style="width:80%"></div>
-                <span class="rating">4 / 5</span>
-              </div>
-            </div>
-
-            <div class="skill-bar web">
-              <strong class="skill-name">Java Script</strong>
-              <div class="bar">
-                <div class="progress" style="width:80%"></div>
-                <span class="rating">4 / 5</span>
-              </div>
-            </div>
-
-            <div class="skill-bar web">
-              <strong class="skill-name">Flask</strong>
-              <div class="bar">
-                <div class="progress" style="width:80%"></div>
-                <span class="rating">3 / 5</span>
-              </div>
-            </div>            
-            
-            <div class="skill-bar languages">
-              <strong class="skill-name">C/C++</strong>
-              <div class="bar">
-                <div class="progress" style="width:100%"></div>
-                <span class="rating">4 / 5</span>
-              </div>
-            </div> 
-
-            
-            <div class="skill-bar languages web">
-              <strong class="skill-name">English</strong>
-              <div class="bar">
-                <div class="progress" style="width:100%"></div>
-                <span class="rating">5 / 5</span>
-              </div>
-            </div>
-
-            <div class="skill-bar languages web">
-              <strong class="skill-name">C Sharp</strong>
-              <div class="bar">
-                <div class="progress" style="width:100%"></div>
-                <span class="rating">5 / 5</span>
-              </div>
-            </div>            
-
-            
-          </div>
-        </section>
-        <!-- Detailed Skills Overview Section End --> 
-
-      </main>
-      <!-- Center Of the Website End -->
-
-      <!-- Side Panel Start -->
-      <aside>
-        <!-- Skills Card Start -->
-        <div class="card">
-          <h3 data-key="skills_title" id="Skills">Skills</h3>
-          <div class="skills">
-            <span class="chip">Embedded C</span>
-            <span class="chip">C++</span>
-            <span class="chip">Python</span>
-            <span class="chip">Java</span>
-            <span class="chip">HTML / CSS</span>
-            <span class="chip">RTOS</span>
-            <span class="chip">Arduino Programming</span>
-            <span class="chip">Embedded Linux</span>
-            <span class="chip">Flask</span>
-            <span class="chip">Machine Learning</span>
-            <span class="chip">Vector CANoe</span>
-            <span class="chip">Vector CAST</span>
-            <span class="chip">AUTOSAR</span>
-            <span class="chip">Agile & V-Model</span>
-            <span class="chip">Jira</span>
-            <span class="chip">ALM</span>
-            <span class="chip">I2C / SPI / UART</span>
-            <span class="chip">GPIO</span>
-            <span class="chip">Socket Programming</span>
-            <span class="chip">SSH Tunneling</span>
-            <span class="chip">IBM Rhapsody</span>
-            <span class="chip">CANalyzer</span>
-            <span class="chip">CANdela Studio</span>
-            <span class="chip">ARXML Visualizer</span>
-            <span class="chip">Da Vinci Configurator</span>
-            <span class="chip">Git</span>
-            <br>
-            <!-- For the detailed skills Button -->
-            <a class="btn" id="skillsBtn" href="#Skills_overview" data-key="skills_btn">
-              View Detailed Skills
-            </a>
-          </div>
+        <label class="toggle" title="English / Deutsch">
+          <input id="langCheck" type="checkbox" aria-label="Switch language">
+          <div class="knob"></div>
+        </label>
+        <div class="labels">
+          <!-- German flag -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3" width="24" height="14">
+            <rect width="5" height="1" fill="#000"/>
+            <rect y="1" width="5" height="1" fill="#D00"/>
+            <rect y="2" width="5" height="1" fill="#FFCE00"/>
+          </svg>
+          <span>DE</span>
         </div>
+      </div>
 
+    </header>
 
-
-        <!-- Skills Card End -->
-
-        <!-- Education Card Start -->
-        <div class="card">
-          <h3 data-key="education_title">Education</h3>
-          <div style="margin-top: 16px;">
-            <strong>Masters in Information and Communication Systems</strong><br />
-            <span class="muted">Techniche Universitat Hamburg Harburg (TUHH) , Hamburg, Germany</span><br />
-            <span class="muted">Oct 2025 - Present</span><br />
-            <span class="muted">CGPA: </span>
-          </div>
-          <div style="margin-top: 16px;">
-            <strong>B.Tech in Electronics and Communications Engineering</strong><br />
-            <span class="muted">REVA University, Bengaluru, India</span><br />
-            <span class="muted"> 2023</span><br />
-            <span class="muted">CGPA: 9.23</span>
-          </div>
-          <div style="margin-top: 16px;">
-            <strong>Pre University Degree</strong><br />
-            <span class="muted">ASC Independent PU College, Bengaluru, India</span><br />
-            <span class="muted">2019</span><br />
-            <span class="muted">CGPA: 8.74</span>
-          </div>
-          <div style="margin-top: 16px;">
-            <strong>High School Certificate - ICSE </strong><br />
-            <span class="muted">VLS International School, Bengaluru, India</span><br />
-            <span class="muted">2017</span><br />
-            <span class="muted">CGPA: 8.7</span>
-          </div>
-        </div>
-        <!-- Education Card End -->
-
-        <!-- Download Resume Card Start -->
-        <div class="card">
-          <h3 data-key="resume_title" id="Resume">Resume</h3>
-          <p class="muted" data-key="resume_description">Download a printable copy of my resume (PDF).</p>
-          <a class="btn" id="resumeBtn" href="resume.pdf" download data-key="resume_btn">Download Resume</a>
-        </div>
-        <!-- Download Resume Card End -->
-
-        <!-- Personal Interest Card Start -->
-        <div class="card" id="Personal Interests">
-          <h3 data-key="personal_interests_title"> 🌟 Personal Interests</h3>
-          <p data-key="personal_description_1">🥾 Hiking & trekking adventures in the great outdoors</p>
-          <p data-key="personal_description_2">🌍 Traveled across half of India, exploring its diversity</p>
-          <p data-key="personal_description_3">🤝 Passionate about connecting with new cultures & people</p>
-          <p data-key="personal_description_4">🍳 Love cooking and experimenting with global cuisines</p>
-          <p data-key="personal_description_5">🗣️ Multilingual — fluent in 5 languages, currently pursuing my 6th language German A2 </p>
-          </ul>
-        </div>
-        <!-- Personal Interest Card End -->
-
-        <!-- Contact Card Start -->
-        <div class="card" id="Contact">
-          <h3 data-key="contact_title">Contact</h3>
-          <div class="contact-icons" style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/c-sai-adarsh-varma-8560b3208/" target="_blank" title="LinkedIn"
-              style="display:flex;align-items:center;gap:6px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 0h-14c-2.76 0-5 2.24-5 
-                  5v14c0 2.76 2.24 5 5 
-                  5h14c2.76 0 5-2.24 
-                  5-5v-14c0-2.76-2.24-5-5-5zm-11 
-                  19h-3v-10h3v10zm-1.5-11.28c-.97 
-                  0-1.75-.79-1.75-1.76s.78-1.76 
-                  1.75-1.76 1.75.79 
-                  1.75 1.76-.78 1.76-1.75 1.76zm13.5 
-                  11.28h-3v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 
-                  0-2.16 1.46-2.16 2.96v5.7h-3v-10h2.88v1.37h.04c.4-.76 
-                  1.38-1.55 2.84-1.55 3.04 0 3.6 2 3.6 4.59v5.59z" />
-              </svg>
-              <span style="font-size: 14px;">linkedin.com/in/CSaiAdarshVarma</span>
-            </a>
-
-            <!-- Instagram -->
-            <a href="https://instagram.com/yourprofile" target="_blank" title="Instagram"
-              style="display:flex;align-items:center;gap:6px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M7 2C4.24 2 2 4.24 2 
-                  7v10c0 2.76 2.24 5 5 
-                  5h10c2.76 0 5-2.24 
-                  5-5V7c0-2.76-2.24-5-5-5H7zm10 
-                  2c1.65 0 3 1.35 3 3v10c0 
-                  1.65-1.35 3-3 3H7c-1.65 
-                  0-3-1.35-3-3V7c0-1.65 
-                  1.35-3 3-3h10zm-5 3c-2.76 0-5 
-                  2.24-5 5s2.24 5 5 
-                  5 5-2.24 5-5-2.24-5-5-5zm0 
-                  2c1.65 0 3 1.35 3 3s-1.35 3-3 
-                  3-3-1.35-3-3 1.35-3 3-3zm4.5-.75a1.25 
-                  1.25 0 1 0 0-2.5 1.25 
-                  1.25 0 0 0 0 2.5z" />
-              </svg>
-              <span style="font-size: 14px;">instagram.com/adarzh_varma</span>
-            </a>
-
-            <!-- Email with visible text -->
-            <a href="mailto:saiadarshvarma@gmail.com" style="display:flex;align-items:center;gap:6px;" title="Email">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20 4H4c-1.1 0-2 
-                  .9-2 2v12c0 1.1.9 2 2 
-                  2h16c1.1 0 2-.9 
-                  2-2V6c0-1.1-.9-2-2-2zm0 
-                  4-8 5-8-5V6l8 
-                  5 8-5v2z" />
-              </svg>
-              <span style="font-size: 14px;">saiadarshvarma@gmail.com</span>
-            </a>
-
-            <!-- LeetCode -->
-            <a href="https://leetcode.com/yourprofile" target="_blank" title="LeetCode">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.5 17H10l-3-3 
-                  3-3h7.5v2H12.5l-1 1 
-                  1 1H17.5v2zM20 
-                  12c0 4.41-3.59 8-8 
-                  8s-8-3.59-8-8 3.59-8 
-                  8-8 8 3.59 8 8zM2 12C2 
-                  6.48 6.48 2 12 2s10 
-                  4.48 10 10-4.48 10-10 
-                  10S2 17.52 2 12z" />
-              </svg>
-              <span style="font-size: 14px;">Leet Code</span>
-            </a>
-
-            <!-- GitHub -->
-            <a href="https://github.com/AdarzhVarma" target="_blank" title="GitHub"
-              style="display:flex;align-items:center;gap:6px;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 .5C5.73.5.5 
-                    5.73.5 12c0 5.08 3.29 9.38 
-                    7.86 10.91.58.11.79-.25.79-.56 
-                    0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.3-1.72-1.3-1.72-1.07-.73.08-.72.08-.72 
-                    1.18.08 1.8 1.21 1.8 1.21 1.05 1.79 2.75 
-                    1.27 3.42.97.11-.76.41-1.27.75-1.56-2.55-.29-5.23-1.28-5.23-5.72 
-                    0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 
-                    0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 5.79 
-                    0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 
-                    3.05.74.81 1.19 1.84 1.19 3.1 
-                    0 4.45-2.69 5.43-5.25 5.71.42.36.8 1.07.8 
-                    2.16 0 1.56-.01 2.81-.01 3.19 
-                    0 .31.21.68.8.56A10.51 10.51 0 0 0 23.5 
-                    12c0-6.27-5.23-11.5-11.5-11.5z" />
-              </svg>
-              <span style="font-size: 14px;">github.com/AdarzhVarma</span>
-            </a>
-          </div>
-        </div>
-        <!-- Contact Card Ends -->
-      </aside>
-      <!-- Side Panel Ends -->
-    </div>
-
-    <!-- Ending page Statement Line Starts -->
-    <footer>
-      <div class="muted">Made With Help Of Jarvis 🤖🧠👩‍💻 </div>
-    </footer>
-    <!-- Ending page Statement Line Ends -->
+    <!-- Navigation Bar -->
+    <nav class="navbar" aria-label="Page sections navigation">
+      <button type="button" data-target="about"             data-key="nav_about_text">About</button>
+      <button type="button" data-target="projects"          data-key="nav_projects_text">Projects</button>
+      <button type="button" data-target="experience"        data-key="nav_experience_text">Experience</button>
+      <button type="button" data-target="Patent & Research" data-key="nav_Patent_Research_text">Patent &amp; Research</button>
+      <button type="button" data-target="Courses"           data-key="nav_courses_text">Courses</button>
+      <button type="button" data-target="ExtraCirrucular"   data-key="nav_extracirrcular_text">ExtraCurricular/Awards</button>
+      <button type="button" data-target="Skills"            data-key="nav_skills_text">Skills</button>
+      <button type="button" data-target="Contact"           data-key="nav_contact_text">Contact</button>
+      <button type="button" data-target="Resume"            data-key="nav_resume_text">Download Resume</button>
+    </nav>
   </div>
+  <!-- END TOPBAR -->
 
-  <!-- Avatar Photo Overlay -->
-  <div class="avatar-overlay" id="avatarOverlay">
-    <div class="overlay-card">
-      <button class="overlay-close" id="overlayClose">&#x2715;</button>
-      <img src="imgsrc\Final_Portfolio_Pic.jpg" alt="Sai Adarsh Varma Chittari">
-      <h2>Sai Adarsh Varma Chittari</h2>
-      <p>Embedded Software Engineer</p>
-      <p>📍 Hamburg, Germany</p>
-    </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       MAIN GRID — left: content | right: sidebar
+       ══════════════════════════════════════════════════════ -->
+  <div class="grid">
+    <main>
+
+      <!-- ── ABOUT ──────────────────────────────────────── -->
+      <section class="card" id="about">
+        <h2 data-key="about_title">About</h2>
+
+        <!-- Stat tiles -->
+        <div class="ab-stats">
+          <div class="ab-stat">
+            <div class="ab-stat-num">3+</div>
+            <div class="ab-stat-label">Years Exp.</div>
+          </div>
+          <div class="ab-stat">
+            <div class="ab-stat-num">10+</div>
+            <div class="ab-stat-label">Projects Shipped</div>
+          </div>
+          <div class="ab-stat">
+            <div class="ab-stat-num">6×</div>
+            <div class="ab-stat-label">Excellence Awards</div>
+          </div>
+          <div class="ab-stat">
+            <div class="ab-stat-num">IN·DE·VN</div>
+            <div class="ab-stat-label">Global Teams</div>
+          </div>
+        </div>
+
+        <!-- Currently pills -->
+        <div class="ab-currently">
+          <div class="ab-curr-pill">
+            <span class="ab-curr-dot"></span>MSc @ TUHH Hamburg
+          </div>
+          <div class="ab-curr-pill">
+            <span class="ab-curr-dot" style="animation-delay:.6s"></span>🏎️ e-gnition Hamburg
+          </div>
+          <!-- <div class="ab-curr-pill">
+            <span class="ab-curr-dot" style="animation-delay:1.2s"></span>🌀 Joining Nordex Apr 2026
+          </div> -->
+        </div>
+
+        <!-- Bio -->
+        <p class="ab-bio" data-key="about_text">
+          Hi, I'm Adarsh! 👋 An <strong>MSc student at TUHH Hamburg</strong> specialising in Secure IT &amp; Dependable Systems — and an embedded engineer with a passion for building systems that are <strong>as secure as they are smart</strong>. Previously <strong>Co-Function Responsible for Airbag Software</strong> at Bosch for Mercedes-Benz, owning safety-critical device drivers across global teams in Germany and Vietnam.<br><br>
+          My expertise spans <strong>Embedded Systems, ML/AI, Full-Stack Web and Security</strong>. I thrive at the intersection of hardware and intelligence — whether leading as a <strong>Product Owner</strong>, engineering race car electronics 🏎️, diving into <strong>TinyML &amp; Edge AI</strong> 🤖, or turning IoT ideas into real-world products 🔌.
+        </p>
+
+        <!-- Passions -->
+        <p class="ab-passions-label">What gets me excited</p>
+        <div class="ab-passions">
+          <div class="ab-passion">
+            <span class="ab-passion-icon">🏎️</span>
+            <p class="ab-passion-title">Motorsport Tech</p>
+            <p class="ab-passion-desc">Race car electronics as smart as the driver — e-gnition Hamburg.</p>
+          </div>
+          <div class="ab-passion">
+            <span class="ab-passion-icon">🤖</span>
+            <p class="ab-passion-title">Edge AI</p>
+            <p class="ab-passion-desc">TinyML bringing real intelligence to embedded hardware.</p>
+          </div>
+          <div class="ab-passion">
+            <span class="ab-passion-icon">🔌</span>
+            <p class="ab-passion-title">IoT + Web</p>
+            <p class="ab-passion-desc">Turning hardware ideas into seamless real-world products.</p>
+          </div>
+        </div>
+      </section>
+      <!-- END ABOUT -->
+
+      <!-- ══════════════════════════════════════════
+           PROJECTS SECTION
+           ══════════════════════════════════════════ -->
+      <section class="card" id="projects">
+        <h2 data-key="projects_title">Projects</h2>
+
+        <!-- Status Bar -->
+        <div class="proj-status-bar">
+          <div class="proj-status-item">
+            <span class="proj-status-dot dot-building"></span>
+            <div>
+              <span class="proj-status-label">Currently building</span>
+              <span class="proj-status-text">Portfolio Website v2</span>
+            </div>
+          </div>
+          <div class="proj-status-item">
+            <span class="proj-status-dot dot-building"></span>
+            <div>
+              <span class="proj-status-label">Currently building</span>
+              <span class="proj-status-text">Dishplay — Race Car Dashboard</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="proj-grid">
+
+          <article class="proj-card">
+            <div class="proj-banner">
+              <div class="proj-banner-fallback pf-biz"></div>
+              <img src="imgsrc/project1.jpg" alt="AI Agile Dashboard" onerror="this.style.display='none'">
+              <div class="proj-banner-overlay"></div>
+              <div class="proj-accent-line pal-biz"></div>
+              <div class="proj-banner-info">
+                <div class="proj-banner-title" data-key="proj1_title">AI Agile Project Dashboard</div>
+              </div>
+            </div>
+            <div class="proj-body">
+              <p class="proj-desc" data-key="proj1_desc">Project Nexus — AI-enhanced Agile dashboard with real-time insights into team performance, sprint health and delivery metrics.</p>
+              <div class="proj-tags">
+                <span class="proj-pill pp-biz">Python</span>
+                <span class="proj-pill pp-biz">AI</span>
+                <span class="proj-pill pp-biz">Agile</span>
+                <span class="proj-pill pp-biz">Dashboard</span>
+              </div>
+              <a href="https://github.com/AdarzhVarma/AI-Assisted-AgileProjectManagement-Dashboard" target="_blank" class="proj-link proj-link-biz" data-key="proj1_link">View on GitHub →</a>
+            </div>
+          </article>
+
+          <article class="proj-card">
+            <div class="proj-banner">
+              <div class="proj-banner-fallback pf-ai"></div>
+              <img src="imgsrc/project2.jpg" alt="Dual Mode ACC" onerror="this.style.display='none'">
+              <div class="proj-banner-overlay"></div>
+              <div class="proj-accent-line pal-ai"></div>
+              <div class="proj-banner-info">
+                <div class="proj-banner-title" data-key="proj2_title">Dual-Mode ACC &amp; Lane Detection</div>
+              </div>
+            </div>
+            <div class="proj-body">
+              <p class="proj-desc" data-key="proj2_desc">Smart vehicle with Adaptive Cruise Control via Bluetooth app, collision avoidance, accident detection and fully autonomous lane-following mode.</p>
+              <div class="proj-tags">
+                <span class="proj-pill pp-ai">OpenCV</span>
+                <span class="proj-pill pp-ai">Raspberry Pi</span>
+                <span class="proj-pill pp-ai">Arduino</span>
+                <span class="proj-pill pp-ai">Bluetooth</span>
+              </div>
+              <a href="https://github.com/AdarzhVarma/Dual-Mode-ACC-Autonomous-Lane-Detection" target="_blank" class="proj-link proj-link-ai" data-key="proj2_link">View on GitHub →</a>
+            </div>
+          </article>
+
+          <article class="proj-card">
+            <div class="proj-banner">
+              <div class="proj-banner-fallback pf-ai2"></div>
+              <img src="imgsrc/project3.jpg" alt="Quad Vision AutoDrive" onerror="this.style.display='none'">
+              <div class="proj-banner-overlay"></div>
+              <div class="proj-accent-line pal-ai"></div>
+              <div class="proj-banner-info">
+                <div class="proj-banner-title" data-key="proj3_title">Quad-Vision AutoDrive</div>
+              </div>
+            </div>
+            <div class="proj-body">
+              <p class="proj-desc" data-key="proj3_desc">Self-driving algorithm handling four real-world scenarios: lane keeping, pothole dodging, traffic sign obedience and animal collision avoidance.</p>
+              <div class="proj-tags">
+                <span class="proj-pill pp-ai">Python</span>
+                <span class="proj-pill pp-ai">OpenCV</span>
+                <span class="proj-pill pp-ai">Deep Learning</span>
+                <span class="proj-pill pp-ai">Sensor Fusion</span>
+              </div>
+              <a href="https://github.com/AdarzhVarma/Quad-Vision-AutoDrive" target="_blank" class="proj-link proj-link-ai" data-key="proj3_link">View on GitHub →</a>
+            </div>
+          </article>
+
+          <article class="proj-card">
+            <div class="proj-banner">
+              <div class="proj-banner-fallback pf-embed"></div>
+              <img src="imgsrc/project4.jpg" alt="Arduino Embedded Projects" onerror="this.style.display='none'">
+              <div class="proj-banner-overlay"></div>
+              <div class="proj-accent-line pal-embed"></div>
+              <div class="proj-banner-info">
+                <div class="proj-banner-title" data-key="proj4_title">Arduino Embedded Projects</div>
+              </div>
+            </div>
+            <div class="proj-body">
+              <p class="proj-desc" data-key="proj4_desc">Collection of Arduino-based embedded systems — sensor interfacing, actuator control, communication protocols and hardware prototyping.</p>
+              <div class="proj-tags">
+                <span class="proj-pill pp-embed">Arduino</span>
+                <span class="proj-pill pp-embed">C++</span>
+                <span class="proj-pill pp-embed">I2C / SPI</span>
+                <span class="proj-pill pp-embed">GPIO</span>
+              </div>
+              <a href="https://github.com/AdarzhVarma/arduino-embedded-projects" target="_blank" class="proj-link proj-link-embed" data-key="proj4_link">View on GitHub →</a>
+            </div>
+          </article>
+
+          <article class="proj-card">
+            <div class="proj-banner">
+              <div class="proj-banner-fallback pf-ai3"></div>
+              <img src="imgsrc/project5.jpg" alt="Jack Personal Assistant" onerror="this.style.display='none'">
+              <div class="proj-banner-overlay"></div>
+              <div class="proj-accent-line pal-ai"></div>
+              <div class="proj-banner-info">
+                <div class="proj-banner-title" data-key="proj5_title">Jack — Personal Assistant</div>
+              </div>
+            </div>
+            <div class="proj-body">
+              <p class="proj-desc" data-key="proj5_desc">Voice-driven AI assistant with NLP, weather, WhatsApp messaging, email management and an integrated depression therapy conversation module.</p>
+              <div class="proj-tags">
+                <span class="proj-pill pp-ai">Python</span>
+                <span class="proj-pill pp-ai">NLTK</span>
+                <span class="proj-pill pp-ai">Speech API</span>
+                <span class="proj-pill pp-ai">REST APIs</span>
+              </div>
+              <a href="https://github.com/AdarzhVarma/Jack_Personal_Assistant" target="_blank" class="proj-link proj-link-ai" data-key="proj5_link">View on GitHub →</a>
+            </div>
+          </article>
+
+          <article class="proj-card">
+            <div class="proj-banner">
+              <div class="proj-banner-fallback pf-embed2"></div>
+              <img src="imgsrc/project6.jpg" alt="Autonomous Forklifts" onerror="this.style.display='none'">
+              <div class="proj-banner-overlay"></div>
+              <div class="proj-accent-line pal-embed"></div>
+              <div class="proj-banner-info">
+                <div class="proj-banner-title" data-key="proj6_title">Fishing Autonomous Forklifts</div>
+              </div>
+            </div>
+            <div class="proj-body">
+              <p class="proj-desc" data-key="proj6_desc">Autonomous forklift navigation system — collaborative project combining embedded control, path planning and real-world obstacle handling.</p>
+              <div class="proj-tags">
+                <span class="proj-pill pp-embed">Autonomy</span>
+                <span class="proj-pill pp-embed">Navigation</span>
+                <span class="proj-pill pp-embed">IoT</span>
+                <span class="proj-pill pp-embed">C++</span>
+              </div>
+              <a href="https://github.com/NSVEGUR/fishing-autonomous-forklifts" target="_blank" class="proj-link proj-link-embed" data-key="proj6_link">View on GitHub →</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+      <!-- END PROJECTS -->
+
+      <!-- ══════════════════════════════════════════
+           EXPERIENCE SECTION
+           ══════════════════════════════════════════ -->
+      <section class="card" id="experience">
+        <h2 data-key="experience_title">Experience</h2>
+        <div class="ex-timeline">
+
+          <!-- <div class="ex-job">
+            <div class="ex-marker"><div class="ex-icon">🌀</div></div>
+            <div class="ex-content">
+              <div class="ex-header">
+                <p class="ex-company">Nordex SE</p>
+                <span class="ex-period">Apr 2026 — Present</span>
+              </div>
+              <p class="ex-role">— Add your role title —</p>
+              <p class="ex-location">📍 Hamburg, Germany</p>
+            </div>
+          </div> -->
+
+          <div class="ex-job">
+            <div class="ex-marker"><div class="ex-icon">🏎️</div></div>
+            <div class="ex-content">
+              <div class="ex-header">
+                <p class="ex-company">e-gnition Hamburg e.V. — Formula Student</p>
+                <span class="ex-period">Sep 2025 — Present</span>
+              </div>
+              <p class="ex-role">Embedded Software Developer → Dashboard Responsible (Dishplay)</p>
+              <p class="ex-location">📍 Hamburg, Germany</p>
+              <ul class="ex-bullets">
+                <li class="ex-bullet">Responsible for Dishplay — the race car's in-vehicle dashboard — delivering real-time KPI visualisation for driver performance using NXP S32K embedded firmware.</li>
+                <li class="ex-bullet">Developed software-version tracking binding GitHub commit metadata to CAN messages, accelerating debugging efficiency by 20% across Sensor Board, ACU and LED systems.</li>
+                <li class="ex-bullet">Pioneered modern system design methodologies, transitioning to structured and scalable track-ready systems — improving code readability by 40%.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="ex-job">
+            <div class="ex-marker"><div class="ex-icon">📦</div></div>
+            <div class="ex-content">
+              <div class="ex-header">
+                <p class="ex-company">TUHH × Rhenus Logistics GmbH</p>
+                <span class="ex-period">Nov 2025 — Mar 2026</span>
+              </div>
+              <p class="ex-role">Product Owner — Data Analytics &amp; Simulation</p>
+              <p class="ex-location">📍 Neu Wulmstorf, Germany</p>
+              <ul class="ex-bullets">
+                <li class="ex-bullet">Directed Agile project lifecycle as Product Owner in a Scrum environment, managing backlog and aligning simulation goals with Rhenus Logistics' warehouse optimisation requirements.</li>
+                <li class="ex-bullet">Modelled a 70% throughput increase (7 → 12 pallets/day) for a fleet of autonomous forklifts using Discrete-Event Simulation in Python and SimPy.</li>
+                <li class="ex-bullet">Identified critical operational bottlenecks using a KPI-driven dashboard and gap analysis built on day-to-day forklift operational data.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="ex-job">
+            <div class="ex-marker"><div class="ex-icon">🔧</div></div>
+            <div class="ex-content">
+              <div class="ex-header">
+                <p class="ex-company">BGSW — Bosch Global Software Technologies</p>
+                <span class="ex-period">Jul 2023 — Sep 2025</span>
+              </div>
+              <p class="ex-role">Software Developer · Co-Function Responsible, Complex Device Drivers</p>
+              <p class="ex-location">📍 Bengaluru, India</p>
+              <ul class="ex-bullets">
+                <li class="ex-bullet">Engineered safety-critical airbag software for Mercedes-Benz platforms (MMA, MRA2M, S-Class, E-Class) ensuring 100% compliance with ASIL-D, ASPICE and ISO 26262.</li>
+                <li class="ex-bullet">Slashed hardware dependency by 50% through global SiL framework deployment, contributing 10% to BGSW Airbag Team annual efficiency goals across India, Germany and Vietnam.</li>
+                <li class="ex-bullet">Scaled system robustness from 40% to 85% by redesigning legacy Crash Output and Battery Disconnect Management components using 8D and 5-Why methodology.</li>
+                <li class="ex-bullet">End-to-end feature developer for Mercedes-Benz Vans Multifunction Seat Systems — owning full lifecycle from DOORS requirement management to UML architecture to validation.</li>
+                <li class="ex-bullet">CDD Co-Function Owner for SOS-ECall, Squib and Seat management; configured AUTOSAR communication stack (FlexRay/CAN/LIN) and BSW modules (PduR, EcuM, BswM).</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="ex-job">
+            <div class="ex-marker"><div class="ex-icon">🌱</div></div>
+            <div class="ex-content">
+              <div class="ex-header">
+                <p class="ex-company">BGSW — Bosch Global Software Technologies</p>
+                <span class="ex-period">Sep 2022 — Jul 2023</span>
+              </div>
+              <p class="ex-role">Project Trainee</p>
+              <p class="ex-location">📍 Bengaluru, India</p>
+              <ul class="ex-bullets">
+                <li class="ex-bullet">Developed a GUI-based Remote Target Access Solution for General Motors graphics ECUs, integrating hardware control and ECU flashing — improving team efficiency by 80%.</li>
+                <li class="ex-bullet">Implemented real-time camera streaming for remote monitoring and testing; pitched the architecture at ADIT GmbH workshops to ensure future scalability.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!-- END EXPERIENCE -->
+
+      <!-- ══════════════════════════════════════════
+           PATENT & RESEARCH SECTION
+           ══════════════════════════════════════════ -->
+      <section class="card" id="Patent & Research">
+        <h2 data-key="Patent_Research_title">Patent &amp; Research</h2>
+        <div class="pr-items">
+
+          <div class="pr-row">
+            <span class="pr-dot"></span>
+            <div class="pr-text">
+              <p class="pr-name">Pothole Detection For Accident Prevention: A Review</p>
+              <p class="pr-desc">A literature review of computer vision and sensor-based methods for real-time road pothole detection to reduce vehicle accidents.</p>
+              <div class="pr-bottom">
+                <span class="pr-chip">Conference Paper</span>
+                <span class="pr-sub">IJARIIT · 2020</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr-row">
+            <span class="pr-dot"></span>
+            <div class="pr-text">
+              <p class="pr-name">Development Of An Uncrewed Vehicle Prototype Using Deep Learning And IoT</p>
+              <p class="pr-desc">Built and validated an autonomous vehicle prototype combining deep learning-based perception with IoT-driven real-time control systems.</p>
+              <div class="pr-bottom">
+                <span class="pr-chip">Conference Paper</span>
+                <span class="pr-sub">ICSTCEE · 2023</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr-row">
+            <span class="pr-dot"></span>
+            <div class="pr-text">
+              <p class="pr-name">Development Of An Uncrewed Vehicle Prototype Using Deep Learning And IoT</p>
+              <p class="pr-desc">Government-funded project recognised for its impact in autonomous systems research and awarded a state-level grant by KSCST.</p>
+              <div class="pr-bottom">
+                <span class="pr-chip">Funded Research</span>
+                <span class="pr-sub">KSCST · Proposal No. 46S BE 2688</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr-row">
+            <span class="pr-dot"></span>
+            <div class="pr-text">
+              <p class="pr-name">Development Of Self-Driving Car Prototype</p>
+              <p class="pr-desc">Filed and granted an Indian patent for a self-driving car prototype covering lane detection, obstacle avoidance, and autonomous navigation.</p>
+              <div class="pr-bottom">
+                <span class="pr-chip">Patent</span>
+                <span class="pr-sub">IP India · No. 202241029012 · Issued Jun 2022</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!-- END PATENT & RESEARCH -->
+
+      <!-- ══════════════════════════════════════════
+           COURSES SECTION
+           ══════════════════════════════════════════ -->
+      <section class="card" id="Courses">
+        <h2 data-key="Courses_title">Courses</h2>
+        <div class="cc-rows">
+
+          <div class="cc-row">
+            <a class="cc-name" href="https://udemy.com/certificate/UC-726a8493-a592-4acc-b113-5db7fd740a25/" target="_blank">IoT Automation with ESP8266</a>
+            <span class="cc-chip">Udemy</span>
+            <span class="cc-year">2022</span>
+          </div>
+
+          <div class="cc-row">
+            <a class="cc-name" href="https://udemy.com/certificate/UC-c581eb7d-c0c4-430e-959f-0f40c827802f/" target="_blank">Zero to God — Python 3.8 Full Stack Masterclass</a>
+            <span class="cc-chip">Udemy</span>
+            <span class="cc-year">2021</span>
+          </div>
+
+          <div class="cc-row">
+            <a class="cc-name" href="https://udemy.com/certificate/UC-41110d33-feff-497e-8daa-84e60f86abca/" target="_blank">Arduino Workshop — Step-by-Step Guide</a>
+            <span class="cc-chip">Udemy</span>
+            <span class="cc-year">2021</span>
+          </div>
+
+          <div class="cc-row">
+            <a class="cc-name" href="#" target="_blank">TensorFlow Applications</a>
+            <span class="cc-chip">REVA Univ.</span>
+            <span class="cc-year">2021</span>
+          </div>
+
+          <div class="cc-row">
+            <a class="cc-name" href="#" target="_blank">Advanced C from Placement Perspective</a>
+            <span class="cc-chip">REVA Univ.</span>
+            <span class="cc-year">2021</span>
+          </div>
+
+        </div>
+      </section>
+      <!-- END COURSES -->
+
+      <!-- ══════════════════════════════════════════
+           EXTRACURRICULAR & AWARDS SECTION
+           ══════════════════════════════════════════ -->
+      <section class="card" id="ExtraCirrucular">
+        <h2 data-key="ExtraCirrucular_title">Extracurricular &amp; Awards</h2>
+
+        <div class="ec-role">
+          <p class="ec-role-title">REVA University Coders' Club</p>
+          <p class="ec-role-meta">Technical Head &nbsp;·&nbsp; 2022 — 2023</p>
+          <p class="ec-role-desc" data-key="extracirrucular1_description">Mentored developers through workshops, collaborative projects and coding events, fostering skill growth and engagement among junior members.</p>
+        </div>
+
+        <div class="ec-role">
+          <p class="ec-role-title">FUN@WORK — Mercedes-Benz</p>
+          <p class="ec-role-meta">Lead &nbsp;·&nbsp; Oct 2023 — Sep 2025</p>
+          <p class="ec-role-desc" data-key="extracirrucular2_description">Organised team-building activities, creative challenges and informal gatherings to foster collaboration and a positive work culture across the team.</p>
+        </div>
+
+        <div class="ec-subhead">
+          <p class="ec-subhead-title">⭐ Bosch SHABASH Awards</p>
+          <span class="ec-subhead-count">6 awards</span>
+        </div>
+        <div class="ec-awards-grid">
+
+          <div class="ec-award-tile">
+            <p class="ec-award-name">Champ-Skill</p>
+            <p class="ec-award-desc">Recognised for driving SiL discussions, Gen AI adoption and commitment to project timelines.</p>
+            <div class="ec-award-foot">
+              <span class="ec-award-by">Paul Jose Palathingal</span>
+              <span class="ec-award-date">Jun 2025</span>
+            </div>
+          </div>
+
+          <div class="ec-award-tile">
+            <p class="ec-award-name">Applause</p>
+            <p class="ec-award-desc">Appreciated for bringing SiL to work for the Mercedes account and representing the team in multiple forums.</p>
+            <div class="ec-award-foot">
+              <span class="ec-award-by">Suresha K</span>
+              <span class="ec-award-date">Dec 2024</span>
+            </div>
+          </div>
+
+          <div class="ec-award-tile">
+            <p class="ec-award-name">Thumbs Up</p>
+            <p class="ec-award-desc">Recognised for establishing SiL usage in the MB account and collaborating with developers to enhance solutions.</p>
+            <div class="ec-award-foot">
+              <span class="ec-award-by">Paul Jose Palathingal</span>
+              <span class="ec-award-date">Jan 2024</span>
+            </div>
+          </div>
+
+          <div class="ec-award-tile">
+            <p class="ec-award-name">The Embracer of Change</p>
+            <p class="ec-award-desc">Acknowledged for active participation in the AB12 SiL event at BGSW level.</p>
+            <div class="ec-award-foot">
+              <span class="ec-award-by">Nitesh Kumar Saw</span>
+              <span class="ec-award-date">May 2024</span>
+            </div>
+          </div>
+
+          <div class="ec-award-tile">
+            <p class="ec-award-name">Circle of Joy</p>
+            <p class="ec-award-desc">Recognised for redefining team celebrations and putting in time and effort to organise team events.</p>
+            <div class="ec-award-foot">
+              <span class="ec-award-by">Nagendra Puttaswamy</span>
+              <span class="ec-award-date">Jun 2024</span>
+            </div>
+          </div>
+
+          <div class="ec-award-tile">
+            <p class="ec-award-name">Shout Out</p>
+            <p class="ec-award-desc">Team-wide recognition for collaborative spirit and contributions to the SW development team's success.</p>
+            <div class="ec-award-foot">
+              <span class="ec-award-by">Nagendra Puttaswamy</span>
+              <span class="ec-award-date">Dec 2023</span>
+            </div>
+          </div>
+
+        </div>
+
+        <hr class="ec-divider">
+
+        <div class="ec-subhead">
+          <p class="ec-subhead-title">🏆 Hackathons &amp; Competitions</p>
+          <span class="ec-subhead-count">6 events</span>
+        </div>
+        <div class="ec-hack-grid">
+          <div class="ec-hack-tile">REVA Avishkar <span class="ec-badge badge-gold">🥇 1st Place</span></div>
+          <div class="ec-hack-tile">F2S Continental <span class="ec-badge badge-bronze">🥉 3rd Place</span></div>
+          <div class="ec-hack-tile">Code-a-thon</div>
+          <div class="ec-hack-tile">Code Heist</div>
+          <div class="ec-hack-tile">Reva Hack</div>
+          <div class="ec-hack-tile">Flipkart Grid</div>
+        </div>
+
+      </section>
+      <!-- END EXTRACURRICULAR -->
+
+      <!-- ══════════════════════════════════════════
+           SKILLS OVERVIEW SECTION
+           ══════════════════════════════════════════ -->
+      <section class="card" id="Skills_overview">
+        <h2 data-key="skills_overview_title">Complete Skills Overview</h2>
+        <p class="muted sk-note" data-key="skills_overview_note">*Proof* that I am versatile and adaptable — an honest overview of my skills.</p>
+
+        <!-- Filter Tabs -->
+        <div class="sk-filters">
+          <button class="sk-filter-btn" data-filter="all">All</button>
+          <button class="sk-filter-btn" data-filter="embedded"><span class="sk-filter-dot"></span>Embedded</button>
+          <button class="sk-filter-btn" data-filter="ai"><span class="sk-filter-dot"></span>Edge AI / ML</button>
+          <button class="sk-filter-btn" data-filter="web"><span class="sk-filter-dot"></span>Web &amp; Full-Stack</button>
+          <button class="sk-filter-btn" data-filter="tools"><span class="sk-filter-dot"></span>Analytics &amp; Tools</button>
+        </div>
+
+        <!-- Skills List -->
+        <div class="sk-container">
+
+          <!-- Embedded -->
+          <div class="sk-bar embedded"><div class="sk-accent" style="background:#4a90c4"></div><span class="sk-name">Embedded C / C++</span><div class="sk-track"><div class="sk-fill" style="width:88%;background:#4a90c4"></div></div><span class="sk-rating">4.5/5</span></div>
+          <div class="sk-bar embedded"><div class="sk-accent" style="background:#4a90c4"></div><span class="sk-name">AUTOSAR / BSW Stack</span><div class="sk-track"><div class="sk-fill" style="width:85%;background:#4a90c4"></div></div><span class="sk-rating">4/5</span></div>
+          <div class="sk-bar embedded"><div class="sk-accent" style="background:#4a90c4"></div><span class="sk-name">CAN / FlexRay / LIN</span><div class="sk-track"><div class="sk-fill" style="width:82%;background:#4a90c4"></div></div><span class="sk-rating">4/5</span></div>
+          <div class="sk-bar embedded"><div class="sk-accent" style="background:#4a90c4"></div><span class="sk-name">ISO 26262 / ASIL</span><div class="sk-track"><div class="sk-fill" style="width:80%;background:#4a90c4"></div></div><span class="sk-rating">4/5</span></div>
+          <div class="sk-bar embedded"><div class="sk-accent" style="background:#4a90c4"></div><span class="sk-name">RTOS</span><div class="sk-track"><div class="sk-fill" style="width:75%;background:#4a90c4"></div></div><span class="sk-rating">3.5/5</span></div>
+          <div class="sk-bar embedded"><div class="sk-accent" style="background:#4a90c4"></div><span class="sk-name">STM32 / Arduino / NXP S32K</span><div class="sk-track"><div class="sk-fill" style="width:78%;background:#4a90c4"></div></div><span class="sk-rating">4/5</span></div>
+          <div class="sk-bar embedded"><div class="sk-accent" style="background:#4a90c4"></div><span class="sk-name">Renesas RH850</span><div class="sk-track"><div class="sk-fill" style="width:70%;background:#4a90c4"></div></div><span class="sk-rating">3.5/5</span></div>
+          <div class="sk-bar embedded"><div class="sk-accent" style="background:#4a90c4"></div><span class="sk-name">Ethernet / TCP-IP</span><div class="sk-track"><div class="sk-fill" style="width:65%;background:#4a90c4"></div></div><span class="sk-rating">3/5</span></div>
+
+          <!-- Edge AI / ML -->
+          <div class="sk-bar ai"><div class="sk-accent" style="background:#9b6fd4"></div><span class="sk-name">Python</span><div class="sk-track"><div class="sk-fill" style="width:85%;background:#9b6fd4"></div></div><span class="sk-rating">4/5</span></div>
+          <div class="sk-bar ai"><div class="sk-accent" style="background:#9b6fd4"></div><span class="sk-name">Deep Learning / CNN</span><div class="sk-track"><div class="sk-fill" style="width:75%;background:#9b6fd4"></div></div><span class="sk-rating">3.5/5</span></div>
+          <div class="sk-bar ai"><div class="sk-accent" style="background:#9b6fd4"></div><span class="sk-name">OpenCV</span><div class="sk-track"><div class="sk-fill" style="width:72%;background:#9b6fd4"></div></div><span class="sk-rating">3.5/5</span></div>
+          <div class="sk-bar ai"><div class="sk-accent" style="background:#9b6fd4"></div><span class="sk-name">Machine Learning</span><div class="sk-track"><div class="sk-fill" style="width:70%;background:#9b6fd4"></div></div><span class="sk-rating">3.5/5</span></div>
+          <div class="sk-bar ai"><div class="sk-accent" style="background:#9b6fd4"></div><span class="sk-name">TinyML / Edge AI</span><div class="sk-track"><div class="sk-fill" style="width:60%;background:#9b6fd4"></div></div><span class="sk-rating">3/5</span></div>
+          <div class="sk-bar ai"><div class="sk-accent" style="background:#9b6fd4"></div><span class="sk-name">Raspberry Pi / ESP8266</span><div class="sk-track"><div class="sk-fill" style="width:75%;background:#9b6fd4"></div></div><span class="sk-rating">3.5/5</span></div>
+
+          <!-- Web & Full-Stack -->
+          <div class="sk-bar web"><div class="sk-accent" style="background:#3ab870"></div><span class="sk-name">HTML / CSS</span><div class="sk-track"><div class="sk-fill" style="width:80%;background:#3ab870"></div></div><span class="sk-rating">4/5</span></div>
+          <div class="sk-bar web"><div class="sk-accent" style="background:#3ab870"></div><span class="sk-name">JavaScript</span><div class="sk-track"><div class="sk-fill" style="width:75%;background:#3ab870"></div></div><span class="sk-rating">3.5/5</span></div>
+          <div class="sk-bar web"><div class="sk-accent" style="background:#3ab870"></div><span class="sk-name">Flask</span><div class="sk-track"><div class="sk-fill" style="width:70%;background:#3ab870"></div></div><span class="sk-rating">3.5/5</span></div>
+          <div class="sk-bar web"><div class="sk-accent" style="background:#3ab870"></div><span class="sk-name">Socket Programming</span><div class="sk-track"><div class="sk-fill" style="width:72%;background:#3ab870"></div></div><span class="sk-rating">3.5/5</span></div>
+          <div class="sk-bar web"><div class="sk-accent" style="background:#3ab870"></div><span class="sk-name">Linux / Embedded Linux</span><div class="sk-track"><div class="sk-fill" style="width:68%;background:#3ab870"></div></div><span class="sk-rating">3/5</span></div>
+
+          <!-- Analytics & Tools -->
+          <div class="sk-bar tools"><div class="sk-accent" style="background:#d48a3a"></div><span class="sk-name">Vector CANoe / CANalyzer</span><div class="sk-track"><div class="sk-fill" style="width:85%;background:#d48a3a"></div></div><span class="sk-rating">4/5</span></div>
+          <div class="sk-bar tools"><div class="sk-accent" style="background:#d48a3a"></div><span class="sk-name">IBM Rhapsody / UML</span><div class="sk-track"><div class="sk-fill" style="width:80%;background:#d48a3a"></div></div><span class="sk-rating">4/5</span></div>
+          <div class="sk-bar tools"><div class="sk-accent" style="background:#d48a3a"></div><span class="sk-name">DaVinci Configurator</span><div class="sk-track"><div class="sk-fill" style="width:78%;background:#d48a3a"></div></div><span class="sk-rating">4/5</span></div>
+          <div class="sk-bar tools"><div class="sk-accent" style="background:#d48a3a"></div><span class="sk-name">SQL / Power BI / Excel</span><div class="sk-track"><div class="sk-fill" style="width:70%;background:#d48a3a"></div></div><span class="sk-rating">3.5/5</span></div>
+          <div class="sk-bar tools"><div class="sk-accent" style="background:#d48a3a"></div><span class="sk-name">SimPy / Discrete Event Sim</span><div class="sk-track"><div class="sk-fill" style="width:72%;background:#d48a3a"></div></div><span class="sk-rating">3.5/5</span></div>
+          <div class="sk-bar tools"><div class="sk-accent" style="background:#d48a3a"></div><span class="sk-name">Git / GitHub Actions / CI-CD</span><div class="sk-track"><div class="sk-fill" style="width:75%;background:#d48a3a"></div></div><span class="sk-rating">3.5/5</span></div>
+          <div class="sk-bar tools"><div class="sk-accent" style="background:#d48a3a"></div><span class="sk-name">Jira / SAFe Agile / Scrum</span><div class="sk-track"><div class="sk-fill" style="width:85%;background:#d48a3a"></div></div><span class="sk-rating">4/5</span></div>
+          <div class="sk-bar tools"><div class="sk-accent" style="background:#d48a3a"></div><span class="sk-name">GitHub Copilot / Cursor / Claude</span><div class="sk-track"><div class="sk-fill" style="width:80%;background:#d48a3a"></div></div><span class="sk-rating">4/5</span></div>
+
+        </div>
+      </section>
+      <!-- END SKILLS OVERVIEW -->
+
+      <!-- next sections go here -->
+
+    </main>
+
+    <aside>
+
+      <!-- ── Skills Card ── -->
+      <div class="card" id="Skills">
+        <div class="skills-header">
+          <h3 data-key="skills_title">Skills</h3>
+          <a class="skills-detail-btn" href="#Skills_overview" data-key="skills_btn">Rated breakdown ↓</a>
+        </div>
+        <div class="skills">
+          <span class="chip">RTOS</span>
+          <span class="chip">Flask</span>
+          <span class="chip">Linux</span>
+          <span class="chip">SimPy</span>
+          <span class="chip">Python</span>
+          <span class="chip">OpenCV</span>
+          <span class="chip">TinyML</span>
+          <span class="chip">HTML / CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">Git / CI-CD</span>
+          <span class="chip">Renesas RH850</span>
+          <span class="chip">Embedded Linux</span>
+          <span class="chip">CANdela Studio</span>
+          <span class="chip">SQL / Power BI</span>
+          <span class="chip">Embedded C / C++</span>
+          <span class="chip">ISO 26262 / ASIL</span>
+          <span class="chip">I2C / SPI / UART</span>
+          <span class="chip">ARXML Visualizer</span>
+          <span class="chip">Machine Learning</span>
+          <span class="chip">Ethernet / TCP-IP</span>
+          <span class="chip">Jira / SAFe Agile</span>
+          <span class="chip">IBM Rhapsody / UML</span>
+          <span class="chip">Socket Programming</span>
+          <span class="chip">AUTOSAR / BSW Stack</span>
+          <span class="chip">CAN / FlexRay / LIN</span>
+          <span class="chip">Deep Learning / CNN</span>
+          <span class="chip">DaVinci Configurator</span>
+          <span class="chip">Raspberry Pi / ESP8266</span>
+          <span class="chip">Vector CANoe / CANalyzer</span>
+          <span class="chip">STM32 / Arduino / NXP S32K</span>
+        </div>
+      </div>
+
+      <!-- ── Education Card ── -->
+      <div class="card">
+        <h3 data-key="education_title">Education</h3>
+        <div class="edu-item">
+          <strong>Masters in Information and Communication Systems</strong>
+          <span class="muted">Technische Universität Hamburg (TUHH), Hamburg, Germany</span>
+          <span class="muted">Oct 2025 — Present</span>
+        </div>
+        <div class="edu-item">
+          <strong>B.Tech in Electronics and Communications Engineering</strong>
+          <span class="muted">REVA University, Bengaluru, India</span>
+          <span class="muted">2023 · CGPA: 9.23</span>
+        </div>
+        <div class="edu-item">
+          <strong>Pre University Degree</strong>
+          <span class="muted">ASC Independent PU College, Bengaluru, India</span>
+          <span class="muted">2019 · CGPA: 8.74</span>
+        </div>
+        <div class="edu-item">
+          <strong>High School Certificate — ICSE</strong>
+          <span class="muted">VLS International School, Bengaluru, India</span>
+          <span class="muted">2017 · CGPA: 8.7</span>
+        </div>
+      </div>
+
+      <!-- ── Resume Card ── -->
+      <div class="card">
+        <h3 data-key="resume_title" id="Resume">Resume</h3>
+        <p class="muted" data-key="resume_description">Download a printable copy of my resume (PDF).</p>
+        <a class="btn" href="resume.pdf" download data-key="resume_btn">Download Resume</a>
+      </div>
+
+      <!-- ── Personal Interests Card ── -->
+      <div class="card" id="Personal Interests">
+        <h3 data-key="personal_interests_title">🌟 Personal Interests</h3>
+        <p data-key="personal_description_1">🥾 Hiking &amp; trekking adventures in the great outdoors</p>
+        <p data-key="personal_description_2">🌍 Traveled across half of India, exploring its diversity</p>
+        <p data-key="personal_description_3">🤝 Passionate about connecting with new cultures &amp; people</p>
+        <p data-key="personal_description_4">🍳 Love cooking and experimenting with global cuisines</p>
+        <p data-key="personal_description_5">🗣️ Multilingual — fluent in 5 languages, currently pursuing German A2</p>
+      </div>
+
+      <!-- ── Status Card ── -->
+      <div class="card">
+        <h3 class="sc-heading">📡 Status</h3>
+        <div class="sc-status-row">
+          <div class="sc-status-dot"></div>
+          <div>
+            <p class="sc-status-title">Open to Opportunities</p>
+            <p class="sc-status-sub">Working student · Internships · Collabs</p>
+          </div>
+        </div>
+        <a href="mailto:saiadarshvarma@gmail.com" class="sc-link">→ Let's connect</a>
+      </div>
+
+      <!-- ── Currently Building Card ── -->
+      <div class="card">
+        <h3 class="sc-heading">🛠️ Currently Building</h3>
+        <div class="sc-build-list">
+          <div class="sc-build-item">
+            <span class="sc-build-dot"></span>
+            <div>
+              <p class="sc-build-name">Dishplay — Race Car Dashboard</p>
+              <p class="sc-build-sub">e-gnition Hamburg · NXP S32K</p>
+            </div>
+          </div>
+          <div class="sc-build-item">
+            <span class="sc-build-dot" style="animation-delay:.9s"></span>
+            <div>
+              <p class="sc-build-name">Portfolio Website v2</p>
+              <p class="sc-build-sub">HTML · CSS · JS</p>
+            </div>
+          </div>
+          <div class="sc-build-item">
+            <span class="sc-build-dot" style="animation-delay:.6s"></span>
+            <div>
+              <p class="sc-build-name">whoami Terminal</p>
+              <p class="sc-build-sub">Typewriter bio widget</p>
+            </div>
+          </div>
+          <div class="sc-build-item">
+            <span class="sc-build-dot" style="animation-delay:1.2s"></span>
+            <div>
+              <p class="sc-build-name">Ask Adarsh — AI Bot</p>
+              <p class="sc-build-sub">Claude API · Portfolio agent</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Currently Learning Card ── -->
+      <div class="card">
+        <h3 class="sc-heading">📚 Currently Learning</h3>
+        <div class="sc-learn-list">
+          <div class="sc-learn-item">
+            <span class="sc-learn-icon">🇩🇪</span>
+            <div class="sc-learn-info">
+              <p class="sc-learn-name">German B1</p>
+              <div class="sc-learn-track"><div class="sc-learn-fill" style="width:55%"></div></div>
+            </div>
+          </div>
+          <div class="sc-learn-item">
+            <span class="sc-learn-icon">🤖</span>
+            <div class="sc-learn-info">
+              <p class="sc-learn-name">TinyML / Edge AI</p>
+              <div class="sc-learn-track"><div class="sc-learn-fill" style="width:40%"></div></div>
+            </div>
+          </div>
+          <div class="sc-learn-item">
+            <span class="sc-learn-icon">🔒</span>
+            <div class="sc-learn-info">
+              <p class="sc-learn-name">Network Security</p>
+              <div class="sc-learn-track"><div class="sc-learn-fill" style="width:50%"></div></div>
+            </div>
+          </div>
+          <div class="sc-learn-item">
+            <span class="sc-learn-icon">⚙️</span>
+            <div class="sc-learn-info">
+              <p class="sc-learn-name">Rust</p>
+              <div class="sc-learn-track"><div class="sc-learn-fill" style="width:20%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Did You Know Card ── -->
+      <div class="card">
+        <h3 class="sc-heading">💡 Did You Know?</h3>
+        <div class="sc-dyk-wrap">
+          <p class="sc-dyk-text" id="dykText">I've collaborated with engineering teams across India, Germany and Vietnam — all before 25.</p>
+        </div>
+        <div class="sc-dyk-dots" id="dykDots"></div>
+      </div>
+
+      <!-- ── whoami — pixel art animation ── -->
+      <div class="card">
+        <h3 class="sc-heading">👨‍💻 whoami</h3>
+        <canvas id="wipCanvas1" width="264" height="110" style="display:block;width:100%;border-radius:8px;"></canvas>
+        <p class="wip-label">Terminal Bio — In Progress</p>
+      </div>
+
+      <!-- ── Ask Adarsh — pixel art animation ── -->
+      <div class="card">
+        <h3 class="sc-heading">🤖 Ask Adarsh</h3>
+        <canvas id="wipCanvas2" width="264" height="110" style="display:block;width:100%;border-radius:8px;"></canvas>
+        <p class="wip-label">AI Agent — In Progress</p>
+      </div>
+
+      <!-- ── Skill Radar ── -->
+      <div class="card">
+        <h3 class="sc-heading">🕸️ Skill Radar</h3>
+        <canvas id="skillRadar" width="280" height="260" style="display:block;margin:0 auto;max-width:100%;"></canvas>
+      </div>
+
+      <!-- ── Contact Card ── -->
+      <div class="card" id="Contact">
+        <h3 data-key="contact_title">Contact</h3>
+        <div class="contact-list">
+
+          <a class="contact-row" href="https://www.linkedin.com/in/c-sai-adarsh-varma-8560b3208/" target="_blank">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zm13.5 11.28h-3v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.7h-3v-10h2.88v1.37h.04c.4-.76 1.38-1.55 2.84-1.55 3.04 0 3.6 2 3.6 4.59v5.59z"/>
+            </svg>
+            <span>linkedin.com/in/CSaiAdarshVarma</span>
+          </a>
+
+          <a class="contact-row" href="https://instagram.com/adarzh_varma" target="_blank">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10zm-5 3c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 2c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3zm4.5-.75a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5z"/>
+            </svg>
+            <span>instagram.com/adarzh_varma</span>
+          </a>
+
+          <a class="contact-row" href="mailto:saiadarshvarma@gmail.com">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <span>saiadarshvarma@gmail.com</span>
+          </a>
+
+          <a class="contact-row" href="https://leetcode.com/yourprofile" target="_blank">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.5 17H10l-3-3 3-3h7.5v2H12.5l-1 1 1 1H17.5v2zM20 12c0 4.41-3.59 8-8 8s-8-3.59-8-8 3.59-8 8-8 8 3.59 8 8zM2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12z"/>
+            </svg>
+            <span>LeetCode</span>
+          </a>
+
+          <a class="contact-row" href="https://github.com/AdarzhVarma" target="_blank">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.3-1.72-1.3-1.72-1.07-.73.08-.72.08-.72 1.18.08 1.8 1.21 1.8 1.21 1.05 1.79 2.75 1.27 3.42.97.11-.76.41-1.27.75-1.56-2.55-.29-5.23-1.28-5.23-5.72 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.07 11.07 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.45-2.69 5.43-5.25 5.71.42.36.8 1.07.8 2.16 0 1.56-.01 2.81-.01 3.19 0 .31.21.68.8.56A10.51 10.51 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/>
+            </svg>
+            <span>github.com/AdarzhVarma</span>
+          </a>
+
+        </div>
+      </div>
+
+    </aside>
   </div>
+  <!-- END GRID -->
 
-  <!-- Link to external JS -->
-  <script src="script.js"></script>
+  <footer>
+    <div class="muted">Made With Help Of Jarvis 🤖🧠👩‍💻</div>
+  </footer>
+
+</div><!-- end .wrap -->
+
+
+<!-- Avatar photo overlay -->
+<div class="avatar-overlay" id="avatarOverlay">
+  <div class="overlay-card">
+    <button class="overlay-close" id="overlayClose">&#x2715;</button>
+    <img src="imgsrc/Final_Portfolio_Pic.jpg" alt="Sai Adarsh Varma Chittari">
+    <h2>Sai Adarsh Varma Chittari</h2>
+    <p>Embedded Software Engineer</p>
+    <p>📍 Hamburg, Germany</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
