@@ -33,7 +33,7 @@ themeBtn.addEventListener('click', () => {
 const T = {
   en: {
     name:    'Sai Adarsh Varma Chittari',
-    headline: 'Working Student @ Nordex SE GmbH | M.Sc. Student at TUHH | • Embedded • Web • AI | Formula Student Germany (Egnition Hamburg) | Ex-Co Function Resp CDD Bosch (Mercedes-Benz)',
+    headline: ' Working Student @ Nordex SE GmbH | M.Sc. Student at TUHH | • Embedded • Web • AI | Formula Student Germany (Egnition Hamburg) | Ex-Co Function Resp CDD Bosch (Mercedes-Benz)',
     about_title: 'About',
     about_text: `Hi, I'm Adarsh! 👋 An <strong>MSc student at TUHH Hamburg</strong> specialising in Secure IT &amp; Dependable Systems — and an embedded engineer with a passion for building systems that are <strong>as secure as they are smart</strong>. Previously <strong>Co-Function Responsible for Airbag Software</strong> at Bosch for Mercedes-Benz, owning safety-critical device drivers across global teams in Germany and Vietnam.<br><br>My expertise spans <strong>Embedded Systems, ML/AI, Full-Stack Web and Security</strong>. I thrive at the intersection of hardware and intelligence — whether leading as a <strong>Product Owner</strong>, engineering race car electronics 🏎️, diving into <strong>TinyML &amp; Edge AI</strong> 🤖, or turning IoT ideas into real-world products 🔌.`,
     nav_about_text:          'About',
